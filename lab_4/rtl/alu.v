@@ -23,6 +23,7 @@
 module alu(
     input wire[31:0] a,b,
     input wire[7:0] op,
+    input wire[4:0] sa,
     output reg[31:0] y,
     output reg overflow,
     output wire zero
@@ -50,6 +51,16 @@ module alu(
             `EXE_LW_OP: y <= a + b;
             `EXE_SW_OP: y <= a + b;
             `EXE_BEQ_OP: y <= a - b;
+            
+            //shift inst
+            `EXE_SLL_OP: y <= b << sa;
+            `EXE_SRL_OP: y <= b >> sa;
+            `EXE_SRA_OP: y <= ($signed(b)) >>> sa;
+            `EXE_SLLV_OP: y <= b << a[4:0];
+            `EXE_SRLV_OP: y <= b >> a[4:0];
+            `EXE_SRAV_OP: y <= ($signed(b)) >>> a[4:0];
+            
+            
             default : y <= 32'b0;
         endcase
     end
