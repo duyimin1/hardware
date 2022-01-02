@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
 // Date        : Sat Jan  1 13:26:08 2022
 // Host        : DESKTOP-NQNJDGK running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               d:/yingzong/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem/inst_mem_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top inst_mem -prefix
+//               inst_mem_ inst_mem_stub.v
 // Design      : inst_mem
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100tfgg484-1
