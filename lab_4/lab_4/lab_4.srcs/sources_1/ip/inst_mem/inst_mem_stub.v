@@ -1,7 +1,7 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-// Date        : Mon Jan  3 16:25:41 2022
+// Date        : Mon Jan  3 17:59:47 2022
 // Host        : DESKTOP-NQNJDGK running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               d:/yingzong/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem/inst_mem_stub.v

@@ -46,9 +46,20 @@ module aludec(
                 `EXE_MTHI:alucontrol <= `EXE_MTHI_OP;//mthi
                 `EXE_MFLO:alucontrol <= `EXE_MFLO_OP;//mflo
                 `EXE_MTLO:alucontrol <= `EXE_MTLO_OP;//mtlo
-                
+                // Arithmetic inst      
                 `EXE_ADD:alucontrol <= `EXE_ADD_OP; //add
+                `EXE_ADDU:alucontrol <= `EXE_ADDU_OP; //addu
                 `EXE_SUB:alucontrol <= `EXE_SUB_OP; //sub
+                `EXE_SUBU:alucontrol <= `EXE_SUBU_OP; //subu
+                `EXE_SLT:alucontrol <= `EXE_SLT_OP; //slt
+                `EXE_SLTU:alucontrol <= `EXE_SLTU_OP; //sltu
+                `EXE_MULT:alucontrol <= `EXE_MULT_OP; //mult
+                `EXE_MULTU:alucontrol <= `EXE_MULTU_OP; //multu
+                `EXE_DIV:alucontrol <= `EXE_DIV_OP; //div
+                `EXE_DIVU:alucontrol <= `EXE_DIVU_OP; //divu
+                
+                //`EXE_ADD:alucontrol <= `EXE_ADD_OP; //add
+                //`EXE_SUB:alucontrol <= `EXE_SUB_OP; //sub
 
                 `EXE_SLT:alucontrol <= `EXE_SLT_OP; //slt
                 
@@ -60,6 +71,11 @@ module aludec(
             `EXE_XORI:alucontrol <= `EXE_XORI_OP;
             `EXE_LUI:alucontrol <= `EXE_LUI_OP;
             `EXE_ORI:alucontrol <= `EXE_ORI_OP;
+            //Arithmetic inst 
+            `EXE_ADDI:alucontrol <= `EXE_ADDI_OP; //addi
+            `EXE_ADDIU:alucontrol <= `EXE_ADDIU_OP; //addiu
+            `EXE_SLTI:alucontrol <= `EXE_SLTI_OP; //slti
+            `EXE_SLTIU:alucontrol <= `EXE_SLTIU_OP; //sjtiu
             
             `EXE_LW:alucontrol <= `EXE_LW_OP;
             `EXE_SW:alucontrol <= `EXE_SW_OP;

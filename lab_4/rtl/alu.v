@@ -62,13 +62,23 @@ module alu(
             `EXE_MTHI_OP:y <= a;//reg[rs] to hi 
             `EXE_MFLO_OP:y <= hilo[31:0];//lo to reg[rd]
             `EXE_MTLO_OP:y <= a;//reg[rs] to lo
-                
+            // Arithmetic inst
+            `EXE_ADD_OP: y <= a + b;
+            `EXE_ADDU_OP: y <= a + b;
+            `EXE_SUB_OP: y <= a - b;
+            `EXE_SUBU_OP: y <= a - b;
+            `EXE_SLT_OP: y <= $signed(a)<$signed(b);
+            `EXE_SLTU_OP: y <= a < b;
+            `EXE_ADDI_OP: y <= a + b;
+            `EXE_ADDIU_OP: y <= a + b;
+            `EXE_SLTI_OP: y <= $signed(a)<$signed(b);
+            `EXE_SLTIU_OP: y <= a < b;    
                
                 
-            `EXE_ADD_OP: y <= a + b;
-            `EXE_SUB_OP: y <= a - b;
-            `EXE_SLT_OP: y <= $signed(a)<$signed(b);
-            `EXE_ADDI_OP: y <= a + b;
+            //`EXE_ADD_OP: y <= a + b;
+            //`EXE_SUB_OP: y <= a - b;
+            //`EXE_SLT_OP: y <= $signed(a)<$signed(b);
+            //`EXE_ADDI_OP: y <= a + b;
             `EXE_LW_OP: y <= a + b;
             `EXE_SW_OP: y <= a + b;
             `EXE_BEQ_OP: y <= a - b;
