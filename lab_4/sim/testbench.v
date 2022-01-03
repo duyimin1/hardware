@@ -24,10 +24,12 @@ module testbench();
 	reg clk;
 	reg rst;
 
-	wire[31:0] writedata,dataadr;
+	wire[31:0] writedata,dataadr,instr;
 	wire memwrite;
+	wire [39:0] ascii1;
 
-	top dut(clk,rst,writedata,dataadr,memwrite);
+	top dut(clk,rst,writedata,dataadr,memwrite,instr);
+	instdec ascii(instr,ascii1);
 
 	initial begin 
 		rst <= 1;

@@ -34,7 +34,10 @@ module maindec(
     assign {regwrite,regdst,alusrc,branch,memwrite,memtoreg,jump} = controls;
     always @(*) begin
         case (op)
-            `EXE_NOP:controls <= 7'b1100000; //R-TYRE
+            `EXE_NOP:case(funct)//R-TYRE
+                `EXE_MTHI, `EXE_MTLO: controls <= 7'b0000000;
+                default controls <= 7'b1100000;
+                endcase  
             //logic inst
             `EXE_ANDI ,`EXE_XORI, `EXE_LUI, `EXE_ORI: controls <= 7'b1010000; // Immediate
             6'b100011:controls <= 7'b1010010; //LW

@@ -23,7 +23,8 @@
 module top(
 	input wire clk,rst,
 	output wire[31:0] writedata,dataadr,
-	output wire memwrite
+	output wire memwrite,
+	output wire[31:0] instrout
     );
 
 	wire[31:0] pc,instr,readdata;
@@ -31,4 +32,5 @@ module top(
 	mycpu dym(clk,rst,pc,instr,memwrite,dataadr,writedata,readdata);
 	inst_mem imem(~clk,pc[7:2],instr);
 	data_mem dmem(~clk,memwrite,dataadr,writedata,readdata);
+	assign instrout=instr;
 endmodule

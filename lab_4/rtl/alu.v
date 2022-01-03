@@ -21,14 +21,21 @@
 `include "defines.vh"
 
 module alu(
+    input clk,rst,
     input wire[31:0] a,b,
     input wire[7:0] op,
     input wire[4:0] sa,
+    //input wire[31:0] hi,
+    //input wire[31:0] lo,
     output reg[31:0] y,
+    output wire[63:0] hilo_out,
     output reg overflow,
     output wire zero
 );
-
+    reg [63:0] hilo;
+    // initial hilo reg
+    initial hilo = {64{1'b0}};
+    
     /*wire[31:0] s,bout;
     assign bout = op[1] ? ~b : b; //+Îª0£¬-ºÍsltÎª1
     assign s = a + bout + op[1];*/
@@ -43,7 +50,21 @@ module alu(
             `EXE_ORI_OP: y <= a | b;
             `EXE_XORI_OP:y <= a ^ b;
             `EXE_LUI_OP:y <= {b[15:0] , {16{1'b0}} };
-            
+            //shift inst
+            `EXE_SLL_OP: y <= b << sa;
+            `EXE_SRL_OP: y <= b >> sa;
+            `EXE_SRA_OP: y <= ($signed(b)) >>> sa;
+            `EXE_SLLV_OP: y <= b << a[4:0];
+            `EXE_SRLV_OP: y <= b >> a[4:0];
+            `EXE_SRAV_OP: y <= ($signed(b)) >>> a[4:0];
+            //data move inst
+            `EXE_MFHI_OP:y <= hilo[63:32];//hi to reg[rd]
+            `EXE_MTHI_OP:y <= a;//reg[rs] to hi 
+            `EXE_MFLO_OP:y <= hilo[31:0];//lo to reg[rd]
+            `EXE_MTLO_OP:y <= a;//reg[rs] to lo
+                
+               
+                
             `EXE_ADD_OP: y <= a + b;
             `EXE_SUB_OP: y <= a - b;
             `EXE_SLT_OP: y <= $signed(a)<$signed(b);
@@ -52,13 +73,7 @@ module alu(
             `EXE_SW_OP: y <= a + b;
             `EXE_BEQ_OP: y <= a - b;
             
-            //shift inst
-            `EXE_SLL_OP: y <= b << sa;
-            `EXE_SRL_OP: y <= b >> sa;
-            `EXE_SRA_OP: y <= ($signed(b)) >>> sa;
-            `EXE_SLLV_OP: y <= b << a[4:0];
-            `EXE_SRLV_OP: y <= b >> a[4:0];
-            `EXE_SRAV_OP: y <= ($signed(b)) >>> a[4:0];
+            
             
             
             default : y <= 32'b0;
@@ -75,4 +90,12 @@ module alu(
             default : overflow <= 1'b0;
         endcase
     end
+    
+    always @(clk) begin
+        if(op == `EXE_MTHI_OP)begin hilo <= {a,hilo[31:0]}; end 
+        else if(op == `EXE_MTLO_OP) begin hilo <= {hilo[63:32],a}; end
+        //else begin hilo<=hilo; end
+    end
+    
+    assign hilo_out = hilo;    
 endmodule

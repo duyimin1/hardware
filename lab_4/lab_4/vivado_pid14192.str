@@ -4,11 +4,11 @@ Xilinx Vivado v2021.2 (64-bit) [Major: 2021, Minor: 2]
 SW Build: 3367213 on Tue Oct 19 02:48:09 MDT 2021
 IP Build: 3369179 on Thu Oct 21 08:25:16 MDT 2021
 
-Process ID (PID): 16756
+Process ID (PID): 14192
 License: Customer
 Mode: GUI Mode
 
-Current time: 	Sun Jan 02 21:47:32 CST 2022
+Current time: 	Mon Jan 03 14:23:09 CST 2022
 Time zone: 	China Standard Time (Asia/Shanghai)
 
 OS: Windows 10
@@ -48,7 +48,7 @@ Vivado layouts directory: C:/Users/dym/AppData/Roaming/Xilinx/Vivado/2021.2/data
 PlanAhead jar file: 	C:/Xilinx/Vivado/2021.2/lib/classes/planAhead.jar
 Vivado log file: 	D:/yingzong/step_into_mips-lab_4/lab_4/lab_4/vivado.log
 Vivado journal file: 	D:/yingzong/step_into_mips-lab_4/lab_4/lab_4/vivado.jou
-Engine tmp dir: 	D:/yingzong/step_into_mips-lab_4/lab_4/lab_4/.Xil/Vivado-16756-DESKTOP-NQNJDGK
+Engine tmp dir: 	D:/yingzong/step_into_mips-lab_4/lab_4/lab_4/.Xil/Vivado-14192-DESKTOP-NQNJDGK
 
 Xilinx Environment Variables
 ----------------------------
@@ -73,12 +73,14 @@ Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // Tcl Message: start_gui 
 // TclEventType: PROJECT_OPEN_DIALOG
 // Opening Vivado Project: D:\yingzong\step_into_mips-lab_4\lab_4\lab_4\lab_4.xpr. Version: Vivado v2021.2 
-// Tcl Message: open_project D:/yingzong/step_into_mips-lab_4/lab_4/lab_4/lab_4.xpr 
 // TclEventType: DEBUG_PROBE_SET_CHANGE
 // TclEventType: FLOW_ADDED
+// Tcl Message: open_project D:/yingzong/step_into_mips-lab_4/lab_4/lab_4/lab_4.xpr 
 // TclEventType: MSGMGR_MOVEMSG
 // TclEventType: FILE_SET_CHANGE
 // TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
 // TclEventType: RUN_COMPLETED
 // TclEventType: RUN_STATUS_CHANGE
 // TclEventType: RUN_CURRENT
@@ -95,15 +97,13 @@ Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
 // TclEventType: PROJECT_DASHBOARD_GADGET_NEW
 // TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
-// TclEventType: FILE_SET_CHANGE
-// HMemoryUtils.trashcanNow. Engine heap size: 1,250 MB. GUI used memory: 54 MB. Current time: 1/2/22, 9:47:33 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,250 MB. GUI used memory: 54 MB. Current time: 1/3/22, 2:23:10 PM CST
 // TclEventType: FILE_SET_CHANGE
 // TclEventType: PROJECT_NEW
-// [GUI Memory]: 76 MB (+77658kb) [00:00:11]
-// [Engine Memory]: 1,250 MB (+1159453kb) [00:00:11]
-// WARNING: HEventQueue.dispatchEvent() is taking  2444 ms.
 // Tcl Message: open_project D:/yingzong/step_into_mips-lab_4/lab_4/lab_4/lab_4.xpr 
-// Tcl Message: INFO: [Project 1-313] Project file moved from 'D:/hardware proj/hardware-master/hardware-master/lab_4/lab_4' since last save. 
 // Tcl Message: Scanning sources... Finished scanning sources 
 // Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2021.2/data/ip'. 
-// [GUI Memory]: 107 MB (+27532kb) [00:00:12]
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 78 MB (+79442kb) [00:00:14]
+// [Engine Memory]: 1,250 MB (+1159105kb) [00:00:14]
+// WARNING: HEventQueue.dispatchEvent() is taking  2761 ms.
