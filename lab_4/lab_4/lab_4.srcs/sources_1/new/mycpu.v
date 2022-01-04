@@ -26,13 +26,14 @@ module mycpu(
     input wire[31:0] instrF,
     output wire memwriteM,
     output wire[31:0] aluoutM,writedataM,
-    input wire[31:0] readdataM
+    input wire[31:0] readdataM,
+    output wire[3:0] weaM
 );
 
     wire [5:0] opD,functD;
     wire regdstE,alusrcE,pcsrcD,memtoregE,memtoregM,memtoregW,
     regwriteE,regwriteM,regwriteW;
-    wire [7:0] alucontrolE;
+    //wire [7:0] alucontrolE;
     wire flushE,equalD;
 
     //ԭcontroller
@@ -40,10 +41,11 @@ module mycpu(
     wire[1:0] aluopD;
     wire memtoregD,memwriteD,alusrcD,
     regdstD,regwriteD;
-    wire[7:0] alucontrolD;
+    wire[7:0] alucontrolD,alucontrolE,alucontrolM,alucontrolW;
 
     //execute stage
     wire memwriteE;
+    wire[3:0] weaE;
 
     maindec md(
         opD,
@@ -67,6 +69,7 @@ module mycpu(
         {memtoregD,memwriteD,alusrcD,regdstD,regwriteD,alucontrolD},
         {memtoregE,memwriteE,alusrcE,regdstE,regwriteE,alucontrolE}
     );
+    
     flopr #(8) regM(
         clk,rst,
         {memtoregE,memwriteE,regwriteE},
@@ -105,7 +108,7 @@ module mycpu(
     wire [4:0] writeregM;
     //writeback stage
     wire [4:0] writeregW;
-    wire [31:0] aluoutW,readdataW,resultW;
+    wire [31:0] aluoutW,readdataW,resultW,handled_writedata,handled_readdata;
     wire [4:0] saD,saE;
     //hazard detection
     hazard h(
@@ -178,16 +181,23 @@ module mycpu(
     alu alu(clk,rst,srca2E,srcb3E,alucontrolE,saE,aluoutE,hilo,div_stall,overflow);
     mux2 #(5) wrmux(rtE,rdE,regdstE,writeregE);
     
+    write_data_handle writehandle(alucontrolE,aluoutE,srcb2E,weaE,handled_writedata);
+    
     //mem stage
-    flopr #(32) r1M(clk,rst,srcb2E,writedataM);
+    flopr #(32) r1M(clk,rst,handled_writedata,writedataM);
     flopr #(32) r2M(clk,rst,aluoutE,aluoutM);
     flopr #(5) r3M(clk,rst,writeregE,writeregM);
+    flopr #(8) r4M(clk,rst,alucontrolE ,alucontrolM);
+    flopr #(4) r5M(clk,rst,weaE ,weaM);
 
     //writeback stage
     flopr #(32) r1W(clk,rst,aluoutM,aluoutW);
     flopr #(32) r2W(clk,rst,readdataM,readdataW);
     flopr #(5) r3W(clk,rst,writeregM,writeregW);
-    mux2 #(32) resmux(aluoutW,readdataW,memtoregW,resultW);
+    flopr #(8) r4W(clk,rst,alucontrolM ,alucontrolW);
+    
+    read_data_handle readhandle(alucontrolW,readdataW ,aluoutW,handled_readdata);
+    mux2 #(32) resmux(aluoutW,handled_readdata ,memtoregW,resultW);
     
     
 endmodule

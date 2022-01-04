@@ -18,10 +18,12 @@ verilog xil_defaultlib  --include "../../../../../../../CO-lab-material-CQU/ref_
 "../../../../lab_4.srcs/sources_1/new/my_mul.v" \
 "../../../../lab_4.srcs/sources_1/new/mycpu.v" \
 "../../../../../rtl/pc.v" \
+"../../../../lab_4.srcs/sources_1/new/read_data_handle.v" \
 "../../../../../rtl/regfile.v" \
 "../../../../../rtl/signext.v" \
 "../../../../../rtl/sl2.v" \
 "../../../../../rtl/top.v" \
+"../../../../lab_4.srcs/sources_1/new/write_data_handle.v" \
 "../../../../../sim/testbench.v" \
 
 # compile glbl module

@@ -31,7 +31,9 @@ module alu(
     output wire[63:0] hilo_out,
     output wire div_stallE,
     output wire overflow,
-    output wire zero
+    output wire zero,
+    output wire laddressError,  // 读地址错误例外
+    output wire saddressError  // 写地址错误例外
 );
     reg [63:0] hilo;
     // initial hilo reg
@@ -52,6 +54,11 @@ module alu(
     assign overflow_sub = (op == `EXE_SUB_OP) && ((y[31] & (~a[31] & ~b_reg[31])) || (y[31] & (a[31] & b_reg[31])));
     assign overflow = overflow_add || overflow_sub;
     assign y_out = (overflow == 1) ? 0:y;
+    //地址错误
+    assign laddressError = ( (op == `EXE_LH_OP || op == `EXE_LHU_OP) && (y[0] != 0) )? 1:
+                            (op == `EXE_LW_OP && y[1:0] != 2'b00)? 1: 0;
+    assign saddressError = ( (op == `EXE_SH_OP) && (y[0] != 0) )? 1:
+                            (op == `EXE_SW_OP && y[1:0] != 2'b00)? 1: 0;
     /*wire[31:0] s,bout;
     assign bout = op[1] ? ~b : b; //+为0，-和slt为1
     assign s = a + bout + op[1];*/

@@ -36,7 +36,7 @@ module maindec(
         case (op)
             `EXE_NOP:case(funct)//R-TYRE
                 `EXE_MTHI, `EXE_MTLO: controls <= 7'b0000000;
-                default controls <= 7'b1100000;
+                default controls <= 7'b1100000;//ÆäÓàRÐÍÖ¸Áî
                 endcase  
             //logic inst
             `EXE_ANDI ,`EXE_XORI, `EXE_LUI, `EXE_ORI: controls <= 7'b1010000; // Immediate
@@ -47,12 +47,12 @@ module maindec(
             6'b000100:controls <= 7'b0001000; //BEQ
             //6'b001000:controls <= 7'b1010000; //ADDI
             6'b000010:controls <= 7'b0000001; //J
-             // memory inst
+            // memory inst
             `EXE_LW:controls <= 7'b1010010; //LW
-            `EXE_LB:controls <= 7'b1010110; //LB
-            `EXE_LBU:controls <= 7'b1010110; //LBU
-            `EXE_LH:controls <= 7'b1010110; //LH
-            `EXE_LHU:controls <= 7'b1010110; //LHU
+            `EXE_LB:controls <= 7'b1010010; //LB
+            `EXE_LBU:controls <= 7'b1010010; //LBU
+            `EXE_LH:controls <= 7'b1010010; //LH
+            `EXE_LHU:controls <= 7'b1010010; //LHU
             `EXE_SW:controls <= 7'b0010100; //SW
             `EXE_SB:controls <= 7'b0010100; //SB
             `EXE_SH:controls <= 7'b0010100; //SH

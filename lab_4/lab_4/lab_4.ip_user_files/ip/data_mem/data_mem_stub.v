@@ -1,7 +1,7 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-// Date        : Sat Jan  1 13:24:57 2022
+// Date        : Tue Jan  4 21:42:44 2022
 // Host        : DESKTOP-NQNJDGK running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               d:/yingzong/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/data_mem/data_mem_stub.v
@@ -15,10 +15,10 @@
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* x_core_info = "blk_mem_gen_v8_4_5,Vivado 2021.2" *)
 module data_mem(clka, wea, addra, dina, douta)
-/* synthesis syn_black_box black_box_pad_pin="clka,wea[0:0],addra[15:0],dina[31:0],douta[31:0]" */;
+/* synthesis syn_black_box black_box_pad_pin="clka,wea[3:0],addra[31:0],dina[31:0],douta[31:0]" */;
   input clka;
-  input [0:0]wea;
-  input [15:0]addra;
+  input [3:0]wea;
+  input [31:0]addra;
   input [31:0]dina;
   output [31:0]douta;
 endmodule
