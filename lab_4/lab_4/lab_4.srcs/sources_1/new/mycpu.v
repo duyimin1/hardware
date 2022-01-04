@@ -100,6 +100,7 @@ module mycpu(
     wire [63:0] hilo;
     wire div_stall;
     wire stallE;
+    wire overflow;
     //mem stage
     wire [4:0] writeregM;
     //writeback stage
@@ -174,7 +175,7 @@ module mycpu(
     mux3 #(32) forwardbemux(srcbE,resultW,aluoutM,forwardbE,srcb2E);
     mux2 #(32) srcbmux(srcb2E,signimmE,alusrcE,srcb3E);
     
-    alu alu(clk,rst,srca2E,srcb3E,alucontrolE,saE,aluoutE,hilo,div_stall);
+    alu alu(clk,rst,srca2E,srcb3E,alucontrolE,saE,aluoutE,hilo,div_stall,overflow);
     mux2 #(5) wrmux(rtE,rdE,regdstE,writeregE);
     
     //mem stage

@@ -27,10 +27,10 @@ module alu(
     input wire[4:0] sa,
     //input wire[31:0] hi,
     //input wire[31:0] lo,
-    output reg[31:0] y,
+    output wire[31:0] y_out,
     output wire[63:0] hilo_out,
     output wire div_stallE,
-    output reg overflow,
+    output wire overflow,
     output wire zero
 );
     reg [63:0] hilo;
@@ -42,10 +42,21 @@ module alu(
     initial div_valid =1'b0;
     wire div_res_valid;
     wire[63:0] div_out;
+    //y_temp
+    reg [31:0] y;
+    //b的补码
+    reg [31:0] b_reg;
+    wire overflow_add;//检测溢出
+    wire overflow_sub;
+    assign overflow_add = (op == `EXE_ADD_OP || op == `EXE_ADDI_OP) && ((y[31] & (~a[31] & ~b[31])) || (y[31] & (a[31] & b[31])));
+    assign overflow_sub = (op == `EXE_SUB_OP) && ((y[31] & (~a[31] & ~b_reg[31])) || (y[31] & (a[31] & b_reg[31])));
+    assign overflow = overflow_add || overflow_sub;
+    assign y_out = (overflow == 1) ? 0:y;
     /*wire[31:0] s,bout;
     assign bout = op[1] ? ~b : b; //+为0，-和slt为1
     assign s = a + bout + op[1];*/
     always @(*) begin
+        b_reg=0;//初始化
         case (op)
             //logic op
             `EXE_AND_OP: y <= a & b;
@@ -71,7 +82,10 @@ module alu(
             // Arithmetic inst
             `EXE_ADD_OP: y <= a + b;
             `EXE_ADDU_OP: y <= a + b;
-            `EXE_SUB_OP: y <= a - b;
+            `EXE_SUB_OP: begin 
+                b_reg = -b;   
+                y <= a + b_reg;
+            end
             `EXE_SUBU_OP: y <= a - b;
             `EXE_SLT_OP: y <= $signed(a)<$signed(b);
             `EXE_SLTU_OP: y <= a < b;
@@ -94,27 +108,35 @@ module alu(
             //`EXE_SUB_OP: y <= a - b;
             //`EXE_SLT_OP: y <= $signed(a)<$signed(b);
             //`EXE_ADDI_OP: y <= a + b;
-            `EXE_LW_OP: y <= a + b;
-            `EXE_SW_OP: y <= a + b;
+            //`EXE_LW_OP: y <= a + b;
+            //`EXE_SW_OP: y <= a + b;
             `EXE_BEQ_OP: y <= a - b;
 
 
-
+            // memory insts
+            `EXE_LB_OP: y <= a + b;
+            `EXE_LBU_OP: y <= a + b;
+            `EXE_LH_OP: y <= a + b;
+            `EXE_LHU_OP: y <= a + b;
+            `EXE_LW_OP: y <= a + b;
+            `EXE_SB_OP: y <= a + b;
+            `EXE_SH_OP: y <= a + b;
+            `EXE_SW_OP: y <= a + b;
 
             default : y <= 32'b0;
         endcase
     end
     assign zero = (y == 32'b0);
 
-    always @(*) begin
+    /*always @(*) begin
         case (op[2:1])
-            /*2'b01:overflow <= a[31] & b[31] & ~s[31] |
+            2'b01:overflow <= a[31] & b[31] & ~s[31] |
 							~a[31] & ~b[31] & s[31];
 			2'b11:overflow <= ~a[31] & b[31] & s[31] |
-							a[31] & ~b[31] & ~s[31];*/
+							a[31] & ~b[31] & ~s[31];
             default : overflow <= 1'b0;
         endcase
-    end
+    end*/
 
     //multiply
     wire [63:0] hilo_mul; //连接乘法器的结果
