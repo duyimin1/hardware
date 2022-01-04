@@ -29,13 +29,19 @@ module alu(
     //input wire[31:0] lo,
     output reg[31:0] y,
     output wire[63:0] hilo_out,
+    output wire div_stallE,
     output reg overflow,
     output wire zero
 );
     reg [63:0] hilo;
     // initial hilo reg
     initial hilo = {64{1'b0}};
-    
+    //divide
+    wire div_sign;
+    reg div_valid;
+    initial div_valid =1'b0;
+    wire div_res_valid;
+    wire[63:0] div_out;
     /*wire[31:0] s,bout;
     assign bout = op[1] ? ~b : b; //+为0，-和slt为1
     assign s = a + bout + op[1];*/
@@ -46,7 +52,7 @@ module alu(
             `EXE_OR_OP: y <= a | b;
             `EXE_XOR_OP:y <= a ^ b;
             `EXE_NOR_OP:y <= ~(a | b);
-            `EXE_ANDI_OP: y <= a & b;//符号拓展里做了零拓展
+            `EXE_ANDI_OP: y <= a & b; //符号拓展里做了零拓展
             `EXE_ORI_OP: y <= a | b;
             `EXE_XORI_OP:y <= a ^ b;
             `EXE_LUI_OP:y <= {b[15:0] , {16{1'b0}} };
@@ -58,10 +64,10 @@ module alu(
             `EXE_SRLV_OP: y <= b >> a[4:0];
             `EXE_SRAV_OP: y <= ($signed(b)) >>> a[4:0];
             //data move inst
-            `EXE_MFHI_OP:y <= hilo[63:32];//hi to reg[rd]
-            `EXE_MTHI_OP:y <= a;//reg[rs] to hi 
-            `EXE_MFLO_OP:y <= hilo[31:0];//lo to reg[rd]
-            `EXE_MTLO_OP:y <= a;//reg[rs] to lo
+            `EXE_MFHI_OP:y <= hilo[63:32]; //hi to reg[rd]
+            `EXE_MTHI_OP:y <= a; //reg[rs] to hi 
+            `EXE_MFLO_OP:y <= hilo[31:0]; //lo to reg[rd]
+            `EXE_MTLO_OP:y <= a; //reg[rs] to lo
             // Arithmetic inst
             `EXE_ADD_OP: y <= a + b;
             `EXE_ADDU_OP: y <= a + b;
@@ -72,9 +78,18 @@ module alu(
             `EXE_ADDI_OP: y <= a + b;
             `EXE_ADDIU_OP: y <= a + b;
             `EXE_SLTI_OP: y <= $signed(a)<$signed(b);
-            `EXE_SLTIU_OP: y <= a < b;    
-               
-                
+            `EXE_SLTIU_OP: y <= a < b;
+            `EXE_DIV_OP,`EXE_DIVU_OP:begin
+                if(div_res_valid==1'b0)begin
+                    div_valid <=1'b1;
+                end
+                else if(div_res_valid ==1'b1)begin
+                    div_valid <=1'b0;
+                end
+                else begin
+                    div_valid <=1'b0;
+                end
+            end
             //`EXE_ADD_OP: y <= a + b;
             //`EXE_SUB_OP: y <= a - b;
             //`EXE_SLT_OP: y <= $signed(a)<$signed(b);
@@ -82,10 +97,10 @@ module alu(
             `EXE_LW_OP: y <= a + b;
             `EXE_SW_OP: y <= a + b;
             `EXE_BEQ_OP: y <= a - b;
-            
-            
-            
-            
+
+
+
+
             default : y <= 32'b0;
         endcase
     end
@@ -100,12 +115,40 @@ module alu(
             default : overflow <= 1'b0;
         endcase
     end
-    
+
+    //multiply
+    wire [63:0] hilo_mul; //连接乘法器的结果
+    wire mul_signed; //检测有符号乘法
+    assign mul_signed = (op == `EXE_MULT_OP);
+    wire mul_check;
+    assign mul_check = (op == `EXE_MULT_OP || op == `EXE_MULTU_OP);
+    my_mul mult(.a(a),.b(b),.sign(mul_signed),.result(hilo_mul));
+
+
+    assign div_sign  = (op == `EXE_DIV_OP); //判断有无符号
+    //assign div_valid = (op == `EXE_DIV_OP || op == `EXE_DIVU_OP);
+    assign div_stallE=div_valid & ~div_res_valid ;
+    div div(.clk(clk),
+        .rst(rst),
+        .signed_div_i(div_sign),
+        .opdata1_i(a),
+        .opdata2_i(b),
+        .start_i(div_valid),
+        .annul_i(1'b0), //恒为零
+        .result_o(div_out),
+        .ready_o(div_res_valid)
+    );
+
+
     always @(clk) begin
-        if(op == `EXE_MTHI_OP)begin hilo <= {a,hilo[31:0]}; end 
+        if (rst) begin hilo <= {64{1'b0}}; end
+
+        else if(op == `EXE_MTHI_OP)begin hilo <= {a,hilo[31:0]}; end
         else if(op == `EXE_MTLO_OP) begin hilo <= {hilo[63:32],a}; end
-        //else begin hilo<=hilo; end
+        else if(div_res_valid == 1'b1) begin hilo <= div_out; end
+        else if(mul_check == 1'b1) begin hilo <= hilo_mul; end //multiply
+        else begin hilo<=hilo; end
     end
-    
-    assign hilo_out = hilo;    
+
+    assign hilo_out = hilo;
 endmodule

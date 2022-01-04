@@ -29,12 +29,14 @@ module hazard(
 	output wire forwardaD,forwardbD,
 	output wire stallD,
 	//execute stage
+	input wire div_stallE,
 	input wire[4:0] rsE,rtE,
 	input wire[4:0] writeregE,
 	input wire regwriteE,
 	input wire memtoregE,
 	output reg[1:0] forwardaE,forwardbE,
 	output wire flushE,
+	output wire stallE,
 	//mem stage
 	input wire[4:0] writeregM,
 	input wire regwriteM,
@@ -85,10 +87,11 @@ module hazard(
 				(writeregE == rsD | writeregE == rtD) |
 				memtoregM &
 				(writeregM == rsD | writeregM == rtD));
-	assign #1 stallD = lwstallD | branchstallD;
+	assign #1 stallD = lwstallD | branchstallD | div_stallE ;
 	assign #1 stallF = stallD;
 		//stalling D stalls all previous stages
-	assign #1 flushE = stallD;
+	assign #1 stallE=div_stallE ;
+	assign #1 flushE = (lwstallD | branchstallD) & (~div_stallE) ;
 		//stalling D flushes next stage
 	// Note: not necessary to stall D stage on store
   	//       if source comes from load;

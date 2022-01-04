@@ -171,3 +171,46 @@ create_ip_run [get_files -of_objects [get_fileset sources_1] D:/yingzong/step_in
 launch_runs inst_mem_synth_1 -jobs 4
 wait_on_run inst_mem_synth_1
 export_simulation -of_objects [get_files D:/yingzong/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem/inst_mem.xci] -directory D:/yingzong/step_into_mips-lab_4/lab_4/lab_4/lab_4.ip_user_files/sim_scripts -ip_user_files_dir D:/yingzong/step_into_mips-lab_4/lab_4/lab_4/lab_4.ip_user_files -ipstatic_source_dir D:/yingzong/step_into_mips-lab_4/lab_4/lab_4/lab_4.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/yingzong/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/modelsim} {questa=D:/yingzong/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/questa} {riviera=D:/yingzong/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/riviera} {activehdl=D:/yingzong/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_simulation
+open_wave_config D:/yingzong/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+open_wave_config D:/yingzong/step_into_mips-lab_4/lab_4/lab_4/shit_instr.wcfg
+open_wave_config D:/yingzong/step_into_mips-lab_4/lab_4/lab_4/data_move.wcfg
+source testbench.tcl
+close_sim
+add_files -norecurse D:/yingzong/step_into_mips-lab_4/lab_4/rtl/div.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_simulation
+launch_simulation
+close [ open D:/yingzong/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/new/my_mul.v w ]
+add_files D:/yingzong/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/new/my_mul.v
+update_compile_order -fileset sources_1
+add_files -norecurse D:/yingzong/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/new/my_mul.v
+launch_simulation
+open_wave_config D:/yingzong/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+open_wave_config D:/yingzong/step_into_mips-lab_4/lab_4/lab_4/shit_instr.wcfg
+open_wave_config D:/yingzong/step_into_mips-lab_4/lab_4/lab_4/data_move.wcfg
+source testbench.tcl
+close_sim
+launch_simulation
+open_wave_config D:/yingzong/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+open_wave_config D:/yingzong/step_into_mips-lab_4/lab_4/lab_4/shit_instr.wcfg
+open_wave_config D:/yingzong/step_into_mips-lab_4/lab_4/lab_4/data_move.wcfg
+source testbench.tcl
+current_wave_config {data_move.wcfg}
+add_wave {{/testbench/dut/dym/alu/div_stallE}} 
+restart
+run all
+current_wave_config {data_move.wcfg}
+add_wave {{/testbench/dut/dym/h/stallD}} 
+current_wave_config {data_move.wcfg}
+add_wave {{/testbench/dut/dym/h/stallE}} 
+current_wave_config {data_move.wcfg}
+add_wave {{/testbench/dut/dym/h/flushE}} 
+restart
+run all
+current_wave_config {data_move.wcfg}
+add_wave {{/testbench/dut/dym/h/div_stallE}} 
+restart
+run all
+close_sim
