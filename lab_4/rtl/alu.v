@@ -25,6 +25,7 @@ module alu(
     input wire[31:0] a,b,
     input wire[7:0] op,
     input wire[4:0] sa,
+    input wire[31:0] pcplus4E,
     //input wire[31:0] hi,
     //input wire[31:0] lo,
     output wire[31:0] y_out,
@@ -118,7 +119,10 @@ module alu(
             //`EXE_LW_OP: y <= a + b;
             //`EXE_SW_OP: y <= a + b;
             `EXE_BEQ_OP: y <= a - b;
-
+            //J insts
+            `EXE_J_OP: y <= a + b;
+            `EXE_JAL_OP: y <= pcplus4E + 32'b100;
+            `EXE_JALR_OP: y <= pcplus4E + 32'b100;
 
             // memory insts
             `EXE_LB_OP: y <= a + b;

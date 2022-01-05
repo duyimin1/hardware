@@ -30,7 +30,7 @@ module top(
 	wire[31:0] pc,instr,readdata;
     wire[3:0] wea;
 	mycpu dym(clk,rst,pc,instr,memwrite,dataadr,writedata,readdata,wea);
-	inst_mem imem(~clk,pc[7:2],instr);
+	inst_mem imem(~clk,pc,instr);
 	data_mem dmem(~clk,wea,dataadr,writedata,readdata);
 	assign instrout=instr;
 endmodule

@@ -35,31 +35,38 @@ module mycpu(
     regwriteE,regwriteM,regwriteW;
     //wire [7:0] alucontrolE;
     wire flushE,equalD;
-
+    wire jumpD;
+    
     //ԭcontroller
     //decode stage
     wire[1:0] aluopD;
     wire memtoregD,memwriteD,alusrcD,
-    regdstD,regwriteD;
+    regdstD,regwriteD,alD;
     wire[7:0] alucontrolD,alucontrolE,alucontrolM,alucontrolW;
-
+    wire jumprD,jalD;
+    
     //execute stage
     wire memwriteE;
     wire[3:0] weaE;
-
+    wire alE;
+    wire jalE;
+    
     maindec md(
         opD,
         functD ,
+        rtD,
         memtoregD,memwriteD,
         branchD,alusrcD,
         regdstD,regwriteD,
-        jumpD
+        jumpD,
+        alD,
+        jumprD 
         //aluopD
     );
-    aludec ad(opD,functD,alucontrolD);
+    aludec ad(opD,functD,rtD,alucontrolD);
 
     assign pcsrcD = branchD & equalD;
-
+    //assign flushD = pcsrcD | jumpD;
     //pipeline registers
     flopenrc #(13) regE(
         clk,
@@ -69,6 +76,7 @@ module mycpu(
         {memtoregD,memwriteD,alusrcD,regdstD,regwriteD,alucontrolD},
         {memtoregE,memwriteE,alusrcE,regdstE,regwriteE,alucontrolE}
     );
+    flopenrc#(1) regalE(clk,rst,~stallE,flushE,alD,alE);
     
     flopr #(8) regM(
         clk,rst,
@@ -85,7 +93,7 @@ module mycpu(
     //fetch stage
     wire stallF;
     //FD
-    wire [31:0] pcnextFD,pcnextbrFD,pcplus4F,pcbranchD;
+    wire [31:0] pcnextFD,pcnextbrFD,pcplus4F,pcbranchD,pcnextbeforejrFD;
     //decode stage
     wire [31:0] pcplus4D,instrD;
     wire forwardaD,forwardbD;
@@ -93,10 +101,11 @@ module mycpu(
     wire flushD,stallD;
     wire [31:0] signimmD,signimmshD;
     wire [31:0] srcaD,srca2D,srcbD,srcb2D;
+    
     //execute stage
     wire [1:0] forwardaE,forwardbE;
     wire [4:0] rsE,rtE,rdE;
-    wire [4:0] writeregE;
+    wire [4:0] writeregE,writeregtemp;
     wire [31:0] signimmE;
     wire [31:0] srcaE,srca2E,srcbE,srcb2E,srcb3E;
     wire [31:0] aluoutE;
@@ -104,6 +113,9 @@ module mycpu(
     wire div_stall;
     wire stallE;
     wire overflow;
+    wire [31:0] pcplus4E,pcplus8E,aluoutorpcplus8E;
+    wire [4:0] writeregbeforealE;
+    
     //mem stage
     wire [4:0] writeregM;
     //writeback stage
@@ -141,7 +153,8 @@ module mycpu(
     mux2 #(32) pcbrmux(pcplus4F,pcbranchD,pcsrcD,pcnextbrFD);
     mux2 #(32) pcmux(pcnextbrFD,
         {pcplus4D[31:28],instrD[25:0],2'b00},
-        jumpD,pcnextFD);
+        jumpD,pcnextbeforejrFD);
+    mux2 #(32) pcjrmux(pcnextbeforejrFD,srca2D,jumprD,pcnextFD);
 
     //regfile (operates in decode and writeback)
     regfile rf(clk,regwriteW,rsD,rtD,writeregW,resultW,srcaD,srcbD);
@@ -150,14 +163,14 @@ module mycpu(
     pc #(32) pcreg(clk,rst,~stallF,pcnextFD,pcF);
     adder pcadd1(pcF,32'b100,pcplus4F);
     //decode stage
-    flopenr #(32) r1D(clk,rst,~stallD,pcplus4F,pcplus4D);
+    flopenrc #(32) r1D(clk,rst,~stallD,flushD,pcplus4F,pcplus4D);
     flopenrc #(32) r2D(clk,rst,~stallD,flushD,instrF,instrD);
     signext se(instrD[15:0],instrD [29:28] ,signimmD);
     sl2 immsh(signimmD,signimmshD);
     adder pcadd2(pcplus4D,signimmshD,pcbranchD);
     mux2 #(32) forwardamux(srcaD,aluoutM,forwardaD,srca2D);
     mux2 #(32) forwardbmux(srcbD,aluoutM,forwardbD,srcb2D);
-    eqcmp comp(srca2D,srcb2D,equalD);
+    eqcmp comp(opD,rtD,srca2D,srcb2D,equalD);
 
     assign opD = instrD[31:26];
     assign functD = instrD[5:0];
@@ -173,19 +186,23 @@ module mycpu(
     flopenrc #(5) r5E(clk,rst,~stallE,flushE,rtD,rtE);
     flopenrc #(5) r6E(clk,rst,~stallE,flushE,rdD,rdE);
     flopenrc #(5) r7E(clk,rst,~stallE,flushE,saD,saE);
+    flopenrc #(32) r8E(clk,rst,~stallE,flushE,pcplus4D,pcplus4E);
     
     mux3 #(32) forwardaemux(srcaE,resultW,aluoutM,forwardaE,srca2E);
     mux3 #(32) forwardbemux(srcbE,resultW,aluoutM,forwardbE,srcb2E);
     mux2 #(32) srcbmux(srcb2E,signimmE,alusrcE,srcb3E);
     
-    alu alu(clk,rst,srca2E,srcb3E,alucontrolE,saE,aluoutE,hilo,div_stall,overflow);
-    mux2 #(5) wrmux(rtE,rdE,regdstE,writeregE);
-    
+    alu alu(clk,rst,srca2E,srcb3E,alucontrolE,saE,pcplus4E,aluoutE,hilo,div_stall,overflow);
+    mux2 #(5) wrmux(rtE,rdE,regdstE,writeregbeforealE);
+    mux2 #(5) balregmux(writeregbeforealE,5'b11111,alE,writeregE);
+    //mux2 #(5) jalregmux(writeregbeforealE,5'b11111,jalE,writeregE);
+    adder pcadd8(pcplus4E,32'b100,pcplus8E);
+    mux2 #(32) balmux(aluoutE,pcplus8E,alE,aluoutorpcplus8E);
     write_data_handle writehandle(alucontrolE,aluoutE,srcb2E,weaE,handled_writedata);
     
     //mem stage
     flopr #(32) r1M(clk,rst,handled_writedata,writedataM);
-    flopr #(32) r2M(clk,rst,aluoutE,aluoutM);
+    flopr #(32) r2M(clk,rst,aluoutorpcplus8E,aluoutM);
     flopr #(5) r3M(clk,rst,writeregE,writeregM);
     flopr #(8) r4M(clk,rst,alucontrolE ,alucontrolM);
     flopr #(4) r5M(clk,rst,weaE ,weaM);

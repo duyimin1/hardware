@@ -1,10 +1,10 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
--- Date        : Tue Jan  4 18:01:12 2022
+-- Date        : Wed Jan  5 17:05:12 2022
 -- Host        : DESKTOP-NQNJDGK running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               d:/yingzong/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem/inst_mem_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top inst_mem -prefix
+--               inst_mem_ inst_mem_stub.vhdl
 -- Design      : inst_mem
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a100tfgg484-1
@@ -15,7 +15,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity inst_mem is
   Port ( 
     clka : in STD_LOGIC;
-    addra : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    addra : in STD_LOGIC_VECTOR ( 31 downto 0 );
     douta : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
 
@@ -25,7 +25,7 @@ architecture stub of inst_mem is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "clka,addra[5:0],douta[31:0]";
+attribute black_box_pad_pin of stub : architecture is "clka,addra[31:0],douta[31:0]";
 attribute x_core_info : string;
 attribute x_core_info of stub : architecture is "blk_mem_gen_v8_4_5,Vivado 2021.2";
 begin

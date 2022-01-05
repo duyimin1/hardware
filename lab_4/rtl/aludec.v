@@ -24,6 +24,7 @@
 module aludec(
     input wire[5:0] op,
     input wire[5:0] funct,
+    input wire[4:0] rt,
     output reg[7:0] alucontrol
 );
     always @(*) begin
@@ -32,7 +33,7 @@ module aludec(
                 //logic inst
                 `EXE_AND:alucontrol <= `EXE_AND_OP; //and
                 `EXE_OR:alucontrol <= `EXE_OR_OP; //or
-                `EXE_XOR:alucontrol <= `EXE_XOR_OP;//xor
+                `EXE_XOR:alucontrol <= `EXE_XOR_OP; //xor
                 `EXE_NOR:alucontrol <= `EXE_NOR_OP; //nor
                 //shift inst
                 `EXE_SLL:alucontrol <= `EXE_SLL_OP; //sll
@@ -42,10 +43,10 @@ module aludec(
                 `EXE_SRLV:alucontrol <= `EXE_SRLV_OP; //srlv
                 `EXE_SRAV:alucontrol <= `EXE_SRAV_OP; //srav
                 //move inst
-                `EXE_MFHI:alucontrol <= `EXE_MFHI_OP;//mfhi
-                `EXE_MTHI:alucontrol <= `EXE_MTHI_OP;//mthi
-                `EXE_MFLO:alucontrol <= `EXE_MFLO_OP;//mflo
-                `EXE_MTLO:alucontrol <= `EXE_MTLO_OP;//mtlo
+                `EXE_MFHI:alucontrol <= `EXE_MFHI_OP; //mfhi
+                `EXE_MTHI:alucontrol <= `EXE_MTHI_OP; //mthi
+                `EXE_MFLO:alucontrol <= `EXE_MFLO_OP; //mflo
+                `EXE_MTLO:alucontrol <= `EXE_MTLO_OP; //mtlo
                 // Arithmetic inst      
                 `EXE_ADD:alucontrol <= `EXE_ADD_OP; //add
                 `EXE_ADDU:alucontrol <= `EXE_ADDU_OP; //addu
@@ -57,13 +58,12 @@ module aludec(
                 `EXE_MULTU:alucontrol <= `EXE_MULTU_OP; //multu
                 `EXE_DIV:alucontrol <= `EXE_DIV_OP; //div
                 `EXE_DIVU:alucontrol <= `EXE_DIVU_OP; //divu
-                
+                //J inst
+                `EXE_JR:alucontrol <= `EXE_J_OP;
+                `EXE_JALR:alucontrol <= `EXE_JALR_OP;
                 //`EXE_ADD:alucontrol <= `EXE_ADD_OP; //add
                 //`EXE_SUB:alucontrol <= `EXE_SUB_OP; //sub
-
-                `EXE_SLT:alucontrol <= `EXE_SLT_OP; //slt
-                
-                
+                //`EXE_SLT:alucontrol <= `EXE_SLT_OP; //slt
                 default:  alucontrol <= 8'b00000000;
             endcase
             //logic inst
@@ -76,21 +76,35 @@ module aludec(
             `EXE_ADDIU:alucontrol <= `EXE_ADDIU_OP; //addiu
             `EXE_SLTI:alucontrol <= `EXE_SLTI_OP; //slti
             `EXE_SLTIU:alucontrol <= `EXE_SLTIU_OP; //sjtiu
-            
-             // memory insts
-            `EXE_LB:alucontrol <= `EXE_LB_OP; //
-            `EXE_LBU:alucontrol <= `EXE_LBU_OP; //u
-            `EXE_LH:alucontrol <= `EXE_LH_OP; //
-            `EXE_LHU:alucontrol <= `EXE_LHU_OP; //u
-            `EXE_LW:alucontrol <= `EXE_LW_OP; //
+            //branch inst
+            `EXE_BEQ:alucontrol<=`EXE_BEQ_OP;
+            `EXE_BNE:alucontrol<=`EXE_BNE_OP;
+            `EXE_BGTZ:alucontrol<=`EXE_BGTZ_OP;
+            `EXE_BLEZ:alucontrol<=`EXE_BLEZ_OP;
+            `EXE_REGIMM_INST:case(rt)
+                `EXE_BGEZ:alucontrol<=`EXE_BGEZ_OP;
+                `EXE_BGEZAL:alucontrol<=`EXE_BGEZAL_OP;
+                `EXE_BLTZ:alucontrol<=`EXE_BLTZ_OP;
+                `EXE_BLTZAL:alucontrol<=`EXE_BLTZAL_OP;
+                default :alucontrol<=`EXE_NOP_OP;
+            endcase
+             // J insts
+            `EXE_J:alucontrol <= `EXE_J_OP;
+            `EXE_JAL:alucontrol <= `EXE_JAL_OP;
+            // memory insts
+            `EXE_LB:alucontrol <= `EXE_LB_OP; //lb
+            `EXE_LBU:alucontrol <= `EXE_LBU_OP; //lbu
+            `EXE_LH:alucontrol <= `EXE_LH_OP; //lh
+            `EXE_LHU:alucontrol <= `EXE_LHU_OP; //lhu
+            `EXE_LW:alucontrol <= `EXE_LW_OP; //lw
             `EXE_SB:alucontrol <= `EXE_SB_OP; //sb
-            `EXE_SH:alucontrol <= `EXE_SH_OP; //
+            `EXE_SH:alucontrol <= `EXE_SH_OP; //sh
             `EXE_SW:alucontrol <= `EXE_SW_OP; //sw
-            
+
             //`EXE_LW:alucontrol <= `EXE_LW_OP;
             //`EXE_SW:alucontrol <= `EXE_SW_OP;
             //`EXE_ADDI:alucontrol <= `EXE_ADDI_OP;
-            `EXE_BEQ:alucontrol <= `EXE_BEQ_OP;
+            //`EXE_BEQ:alucontrol <= `EXE_BEQ_OP;
         endcase
 
     end

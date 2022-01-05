@@ -7,7 +7,6 @@ verilog xil_defaultlib  --include "../../../../../../../CO-lab-material-CQU/ref_
 "../../../../../rtl/aludec.v" \
 "../../../../../rtl/div.v" \
 "../../../../../rtl/eqcmp.v" \
-"../../../../../rtl/flopenr.v" \
 "../../../../../rtl/flopenrc.v" \
 "../../../../../rtl/flopr.v" \
 "../../../../../rtl/hazard.v" \
