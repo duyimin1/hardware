@@ -1,0 +1,99 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Thu Jan  6 20:02:05 2022
+# Process ID: 11436
+# Current directory: D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6412 D:\yingzong\func_test_v0.01_n4ddr\soc_sram_func\run_vivado\project_1\project_1.xpr
+# Log file: D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/vivado.log
+# Journal file: D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1\vivado.jou
+# Running On: DESKTOP-NQNJDGK, OS: Windows, CPU Frequency: 2400 MHz, CPU Physical cores: 4, Host memory: 17017 MB
+#-----------------------------------------------------------
+start_gui
+open_project D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.xpr
+update_compile_order -fileset sources_1
+add_files -norecurse D:/yingzong/step_into_mips-lab_4/lab_4/rtl/mmu/mmu.v
+update_compile_order -fileset sources_1
+add_files -norecurse D:/yingzong/step_into_mips-lab_4/lab_4/rtl/defines2.vh
+add_files -norecurse D:/yingzong/step_into_mips-lab_4/lab_4/rtl/instdec.v
+update_compile_order -fileset sources_1
+generate_target all [get_files D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/xilinx_ip/inst_ram/inst_ram.xci]
+export_ip_user_files -of_objects [get_files D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/xilinx_ip/inst_ram/inst_ram.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/xilinx_ip/inst_ram/inst_ram.xci] -directory D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.ip_user_files/sim_scripts -ip_user_files_dir D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.ip_user_files -ipstatic_source_dir D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.cache/compile_simlib/modelsim} {questa=D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.cache/compile_simlib/questa} {riviera=D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.cache/compile_simlib/riviera} {activehdl=D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_simulation
+source tb_top.tcl
+run all
+current_wave_config {Untitled 1}
+add_wave {{/tb_top/soc_lite/u_cpu/instdec/ascii}} 
+current_wave_config {Untitled 1}
+add_wave {{/tb_top/soc_lite/u_cpu/cpu/comp/op}} 
+current_wave_config {Untitled 1}
+add_wave {{/tb_top/soc_lite/u_cpu/cpu/comp/rt}} 
+current_wave_config {Untitled 1}
+add_wave {{/tb_top/soc_lite/u_cpu/cpu/comp/a}} 
+current_wave_config {Untitled 1}
+add_wave {{/tb_top/soc_lite/u_cpu/cpu/comp/b}} 
+current_wave_config {Untitled 1}
+add_wave {{/tb_top/soc_lite/u_cpu/cpu/comp/y}} 
+restart
+run all
+current_wave_config {Untitled 1}
+add_wave {{/tb_top/soc_lite/u_cpu/cpu/forwardamux/d0}} 
+current_wave_config {Untitled 1}
+add_wave {{/tb_top/soc_lite/u_cpu/cpu/forwardamux/d1}} 
+current_wave_config {Untitled 1}
+add_wave {{/tb_top/soc_lite/u_cpu/cpu/forwardamux/s}} 
+current_wave_config {Untitled 1}
+add_wave {{/tb_top/soc_lite/u_cpu/cpu/forwardbmux/d0}} 
+current_wave_config {Untitled 1}
+add_wave {{/tb_top/soc_lite/u_cpu/cpu/forwardbmux/d1}} 
+current_wave_config {Untitled 1}
+add_wave {{/tb_top/soc_lite/u_cpu/cpu/forwardbmux/s}} 
+restart
+run all
+current_wave_config {Untitled 1}
+add_wave {{/tb_top/soc_lite/u_cpu/cpu/pcreg/d}} 
+current_wave_config {Untitled 1}
+add_wave {{/tb_top/soc_lite/u_cpu/cpu/pcreg/q}} 
+current_wave_config {Untitled 1}
+add_wave {{/tb_top/soc_lite/u_cpu/cpu/pcreg/en}} 
+restart
+run all
+current_wave_config {Untitled 1}
+add_wave {{/tb_top/soc_lite/u_cpu/cpu/alu}} 
+current_wave_config {Untitled 1}
+add_wave {{/tb_top/soc_lite/u_cpu/cpu/alu/a}} {{/tb_top/soc_lite/u_cpu/cpu/alu/b}} {{/tb_top/soc_lite/u_cpu/cpu/alu/op}} {{/tb_top/soc_lite/u_cpu/cpu/alu/y_out}} 
+restart
+run all
+current_wave_config {Untitled 1}
+add_wave {{/tb_top/soc_lite/u_cpu/cpu/pcF}} {{/tb_top/soc_lite/u_cpu/cpu/pcD}} {{/tb_top/soc_lite/u_cpu/cpu/pcE}} {{/tb_top/soc_lite/u_cpu/cpu/pcM}} {{/tb_top/soc_lite/u_cpu/cpu/pcW}} 
+restart
+run all
+current_wave_config {Untitled 1}
+add_wave {{/tb_top/soc_lite/u_cpu/cpu/signimmE}} 
+restart
+run all
+current_wave_config {Untitled 1}
+add_wave {{/tb_top/soc_lite/u_cpu/cpu/signimmD}} {{/tb_top/soc_lite/u_cpu/cpu/signimmshD}} 
+restart
+run all
+current_wave_config {Untitled 1}
+add_wave {{/tb_top/soc_lite/u_cpu/cpu/se/a}} 
+restart
+run all
+current_wave_config {Untitled 1}
+add_wave {{/tb_top/soc_lite/u_cpu/cpu/instrF}} {{/tb_top/soc_lite/u_cpu/cpu/instrD}} 
+restart
+run all
+relaunch_sim
+run all
+relaunch_sim
+relaunch_sim
+run all
+relaunch_sim
+run all
+save_wave_config {D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/12321.wcfg}
+add_files -fileset sim_1 -norecurse D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/12321.wcfg
+set_property xsim.view {D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/tb_top_behav.wcfg D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/tb_top_behav.wcfg D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/12321.wcfg} [get_filesets sim_1]
+close_sim
