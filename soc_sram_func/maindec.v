@@ -35,7 +35,7 @@ module maindec(
     assign {regwrite,regdst,alusrc,branch,memwrite,memtoreg,jump} = controls;
     assign al=(((op==`EXE_REGIMM_INST)&((rt==`EXE_BLTZAL)|(rt==`EXE_BGEZAL)))|(op == `EXE_JAL))?1:0;
     //jump signals
-    assign jump = ((op == `EXE_J) || (op == `EXE_JAL)) ? 1:0;
+    //assign jump = ((op == `EXE_J) || (op == `EXE_JAL)) ? 1:0;
     assign jumpr = ((op == `EXE_NOP) && ((funct == `EXE_JR) || (funct == `EXE_JALR))) ? 1:0;
     //assign jal = (op == `EXE_JAL) ? 1:0;
     always @(*) begin
@@ -44,7 +44,7 @@ module maindec(
                 `EXE_MTHI, `EXE_MTLO: controls <= 7'b0000000;
                 `EXE_JR: controls <= 7'b0000001;
                 `EXE_JALR: controls <= 7'b1100001;
-                default controls <= 7'b1100000; //ÆäÓàRÐÍÖ¸Áî
+                default controls <= 7'b1100000; //Ã†Ã¤Ã“Ã RÃÃÃ–Â¸ÃÃ®
             endcase
             //logic inst
             `EXE_ANDI ,`EXE_XORI, `EXE_LUI, `EXE_ORI: controls <= 7'b1010000; // Immediate
