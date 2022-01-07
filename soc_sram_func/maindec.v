@@ -21,7 +21,7 @@
 
 `include "defines.vh"
 
-module maindec(
+    module maindec(
     input wire[5:0] op,
     input wire[5:0] funct,
     input wire[4:0] rt,
@@ -77,6 +77,8 @@ module maindec(
             `EXE_SW:controls <= 7'b0010100; //SW
             `EXE_SB:controls <= 7'b0010100; //SB
             `EXE_SH:controls <= 7'b0010100; //SH
+            //现场加指令
+            6'b111111:controls <=7'b1100000;
             default:  controls <= 7'b0000000; //illegal op
         endcase
     end

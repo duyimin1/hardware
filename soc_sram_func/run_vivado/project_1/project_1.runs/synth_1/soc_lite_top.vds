@@ -1,0 +1,584 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Thu Jan  6 22:14:15 2022
+# Process ID: 13480
+# Current directory: D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.runs/synth_1
+# Command line: vivado.exe -log soc_lite_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source soc_lite_top.tcl
+# Log file: D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.runs/synth_1/soc_lite_top.vds
+# Journal file: D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.runs/synth_1\vivado.jou
+# Running On: DESKTOP-NQNJDGK, OS: Windows, CPU Frequency: 2400 MHz, CPU Physical cores: 4, Host memory: 17017 MB
+#-----------------------------------------------------------
+source soc_lite_top.tcl -notrace
+Command: synth_design -top soc_lite_top -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 7976
+WARNING: [Synth 8-992] rtD is already implicitly declared earlier [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:105]
+WARNING: [Synth 8-992] stallE is already implicitly declared earlier [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:119]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1247.254 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'soc_lite_top' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/soc_lite_top.v:65]
+INFO: [Synth 8-6157] synthesizing module 'clk_pll' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.runs/synth_1/.Xil/Vivado-13480-DESKTOP-NQNJDGK/realtime/clk_pll_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_pll' (1#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.runs/synth_1/.Xil/Vivado-13480-DESKTOP-NQNJDGK/realtime/clk_pll_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mycpu_top' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.srcs/sources_1/new/mycpu_top.v:23]
+INFO: [Synth 8-6157] synthesizing module 'instdec' [D:/yingzong/step_into_mips-lab_4/lab_4/rtl/instdec.v:27]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/yingzong/step_into_mips-lab_4/lab_4/rtl/instdec.v:116]
+INFO: [Synth 8-6155] done synthesizing module 'instdec' (2#1) [D:/yingzong/step_into_mips-lab_4/lab_4/rtl/instdec.v:27]
+INFO: [Synth 8-6157] synthesizing module 'mycpu' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:23]
+INFO: [Synth 8-6157] synthesizing module 'maindec' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/maindec.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'maindec' (3#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/maindec.v:24]
+INFO: [Synth 8-6157] synthesizing module 'aludec' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/aludec.v:24]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/aludec.v:31]
+INFO: [Synth 8-6155] done synthesizing module 'aludec' (4#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/aludec.v:24]
+INFO: [Synth 8-6157] synthesizing module 'flopenrc' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/flopenrc.v:23]
+	Parameter WIDTH bound to: 13 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopenrc' (5#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/flopenrc.v:23]
+INFO: [Synth 8-6157] synthesizing module 'flopenrc__parameterized0' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/flopenrc.v:23]
+	Parameter WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopenrc__parameterized0' (5#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/flopenrc.v:23]
+INFO: [Synth 8-6157] synthesizing module 'flopr' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/flopr.v:23]
+	Parameter WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopr' (6#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/flopr.v:23]
+WARNING: [Synth 8-689] width (3) of port connection 'q' does not match port width (8) of module 'flopr' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:89]
+WARNING: [Synth 8-689] width (2) of port connection 'q' does not match port width (8) of module 'flopr' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:94]
+INFO: [Synth 8-6157] synthesizing module 'hazard' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/hazard.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'hazard' (7#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/hazard.v:23]
+INFO: [Synth 8-6157] synthesizing module 'mux2' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mux2.v:23]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mux2' (8#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mux2.v:23]
+INFO: [Synth 8-6157] synthesizing module 'regfile' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/regfile.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'regfile' (9#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/regfile.v:23]
+INFO: [Synth 8-6157] synthesizing module 'pc' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/pc.v:23]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pc' (10#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/pc.v:23]
+INFO: [Synth 8-6157] synthesizing module 'adder' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/adder.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'adder' (11#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/adder.v:23]
+INFO: [Synth 8-6157] synthesizing module 'flopenrc__parameterized1' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/flopenrc.v:23]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopenrc__parameterized1' (11#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/flopenrc.v:23]
+INFO: [Synth 8-6157] synthesizing module 'signext' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/signext.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'signext' (12#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/signext.v:23]
+INFO: [Synth 8-6157] synthesizing module 'sl2' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/sl2.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'sl2' (13#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/sl2.v:23]
+INFO: [Synth 8-6157] synthesizing module 'eqcmp' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/eqcmp.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'eqcmp' (14#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/eqcmp.v:23]
+INFO: [Synth 8-6157] synthesizing module 'flopenrc__parameterized2' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/flopenrc.v:23]
+	Parameter WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopenrc__parameterized2' (14#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/flopenrc.v:23]
+INFO: [Synth 8-6157] synthesizing module 'mux3' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mux3.v:23]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mux3' (15#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mux3.v:23]
+INFO: [Synth 8-6157] synthesizing module 'alu' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/alu.v:23]
+INFO: [Synth 8-6157] synthesizing module 'my_mul' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/my_mul.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'my_mul' (16#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/my_mul.v:23]
+INFO: [Synth 8-6157] synthesizing module 'div' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/div.v:35]
+INFO: [Synth 8-6155] done synthesizing module 'div' (17#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/div.v:35]
+WARNING: [Synth 8-567] referenced signal 'rst' should be on the sensitivity list [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/alu.v:175]
+WARNING: [Synth 8-567] referenced signal 'op' should be on the sensitivity list [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/alu.v:175]
+WARNING: [Synth 8-567] referenced signal 'a' should be on the sensitivity list [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/alu.v:175]
+WARNING: [Synth 8-567] referenced signal 'hilo' should be on the sensitivity list [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/alu.v:175]
+WARNING: [Synth 8-567] referenced signal 'div_res_valid' should be on the sensitivity list [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/alu.v:175]
+WARNING: [Synth 8-567] referenced signal 'div_out' should be on the sensitivity list [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/alu.v:175]
+WARNING: [Synth 8-567] referenced signal 'mul_check' should be on the sensitivity list [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/alu.v:175]
+WARNING: [Synth 8-567] referenced signal 'hilo_mul' should be on the sensitivity list [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/alu.v:175]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (18#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/alu.v:23]
+WARNING: [Synth 8-7071] port 'zero' of module 'alu' is unconnected for instance 'alu' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:205]
+WARNING: [Synth 8-7071] port 'laddressError' of module 'alu' is unconnected for instance 'alu' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:205]
+WARNING: [Synth 8-7071] port 'saddressError' of module 'alu' is unconnected for instance 'alu' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:205]
+WARNING: [Synth 8-7023] instance 'alu' of module 'alu' has 14 connections declared, but only 11 given [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:205]
+INFO: [Synth 8-6157] synthesizing module 'mux2__parameterized0' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mux2.v:23]
+	Parameter WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mux2__parameterized0' (18#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mux2.v:23]
+INFO: [Synth 8-6157] synthesizing module 'write_data_handle' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/write_data_handle.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'write_data_handle' (19#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/write_data_handle.v:23]
+INFO: [Synth 8-6157] synthesizing module 'flopr__parameterized0' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/flopr.v:23]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopr__parameterized0' (19#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/flopr.v:23]
+INFO: [Synth 8-6157] synthesizing module 'flopr__parameterized1' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/flopr.v:23]
+	Parameter WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopr__parameterized1' (19#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/flopr.v:23]
+INFO: [Synth 8-6157] synthesizing module 'flopr__parameterized2' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/flopr.v:23]
+	Parameter WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopr__parameterized2' (19#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/flopr.v:23]
+INFO: [Synth 8-6157] synthesizing module 'read_data_handle' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/read_data_handle.v:23]
+INFO: [Synth 8-226] default block is never used [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/read_data_handle.v:53]
+INFO: [Synth 8-226] default block is never used [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/read_data_handle.v:63]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/read_data_handle.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'read_data_handle' (20#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/read_data_handle.v:23]
+WARNING: [Synth 8-3848] Net flushD in module/entity mycpu does not have driver. [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:106]
+INFO: [Synth 8-6155] done synthesizing module 'mycpu' (21#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:23]
+WARNING: [Synth 8-7071] port 'memwriteM' of module 'mycpu' is unconnected for instance 'cpu' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.srcs/sources_1/new/mycpu_top.v:54]
+WARNING: [Synth 8-7023] instance 'cpu' of module 'mycpu' has 13 connections declared, but only 12 given [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.srcs/sources_1/new/mycpu_top.v:54]
+INFO: [Synth 8-6157] synthesizing module 'mmu' [D:/yingzong/step_into_mips-lab_4/lab_4/rtl/mmu/mmu.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mmu' (22#1) [D:/yingzong/step_into_mips-lab_4/lab_4/rtl/mmu/mmu.v:1]
+WARNING: [Synth 8-7071] port 'no_dcache' of module 'mmu' is unconnected for instance 'mmu' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.srcs/sources_1/new/mycpu_top.v:69]
+WARNING: [Synth 8-7023] instance 'mmu' of module 'mmu' has 5 connections declared, but only 4 given [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.srcs/sources_1/new/mycpu_top.v:69]
+INFO: [Synth 8-6155] done synthesizing module 'mycpu_top' (23#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.srcs/sources_1/new/mycpu_top.v:23]
+INFO: [Synth 8-6157] synthesizing module 'inst_ram' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.runs/synth_1/.Xil/Vivado-13480-DESKTOP-NQNJDGK/realtime/inst_ram_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'inst_ram' (24#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.runs/synth_1/.Xil/Vivado-13480-DESKTOP-NQNJDGK/realtime/inst_ram_stub.v:6]
+WARNING: [Synth 8-689] width (4) of port connection 'wea' does not match port width (1) of module 'inst_ram' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/soc_lite_top.v:168]
+INFO: [Synth 8-6157] synthesizing module 'bridge_1x2' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/BRIDGE/bridge_1x2.v:50]
+INFO: [Synth 8-6155] done synthesizing module 'bridge_1x2' (25#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/BRIDGE/bridge_1x2.v:50]
+INFO: [Synth 8-6157] synthesizing module 'data_ram' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.runs/synth_1/.Xil/Vivado-13480-DESKTOP-NQNJDGK/realtime/data_ram_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'data_ram' (26#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.runs/synth_1/.Xil/Vivado-13480-DESKTOP-NQNJDGK/realtime/data_ram_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'confreg' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/CONFREG/confreg.v:73]
+	Parameter SIMULATION bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module 'confreg' (27#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/CONFREG/confreg.v:73]
+WARNING: [Synth 8-7071] port 'btn_key_col' of module 'confreg' is unconnected for instance 'confreg' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/soc_lite_top.v:209]
+WARNING: [Synth 8-7071] port 'btn_key_row' of module 'confreg' is unconnected for instance 'confreg' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/soc_lite_top.v:209]
+WARNING: [Synth 8-7071] port 'btn_step' of module 'confreg' is unconnected for instance 'confreg' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/soc_lite_top.v:209]
+WARNING: [Synth 8-7023] instance 'confreg' of module 'confreg' has 17 connections declared, but only 14 given [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/soc_lite_top.v:209]
+INFO: [Synth 8-6155] done synthesizing module 'soc_lite_top' (28#1) [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/soc_lite_top.v:65]
+WARNING: [Synth 8-7129] Port conf_addr[31] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[30] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[29] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[28] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[27] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[26] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[25] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[24] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[23] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[22] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[21] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[20] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[19] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[18] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[17] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port conf_addr[16] in module confreg is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[31] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[30] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[29] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[28] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[27] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[26] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[25] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[24] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[23] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[22] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[21] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[20] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[19] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[18] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[17] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[16] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[15] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[14] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[13] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[12] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[11] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[10] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[9] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[8] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[7] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[6] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[5] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[4] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[3] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[2] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[31] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[30] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[29] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[28] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[27] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[26] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[25] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[24] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[23] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[22] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[21] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[20] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[19] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[18] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[17] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[16] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[15] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[14] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[13] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[12] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[11] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[10] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[9] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[8] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[7] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[6] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[5] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[4] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[3] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aluoutE[2] in module write_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port a[31] in module sl2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port a[30] in module sl2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port int in module mycpu_top is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1247.254 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1247.254 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1247.254 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.128 . Memory (MB): peak = 1247.254 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/xilinx_ip/clk_pll/clk_pll/clk_pll_in_context.xdc] for cell 'pll.clk_pll'
+Finished Parsing XDC File [d:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/xilinx_ip/clk_pll/clk_pll/clk_pll_in_context.xdc] for cell 'pll.clk_pll'
+Parsing XDC File [d:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/xilinx_ip/data_ram/data_ram/data_ram_in_context.xdc] for cell 'data_ram'
+Finished Parsing XDC File [d:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/xilinx_ip/data_ram/data_ram/data_ram_in_context.xdc] for cell 'data_ram'
+Parsing XDC File [d:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/xilinx_ip/inst_ram/inst_ram/inst_ram_in_context.xdc] for cell 'inst_ram'
+Finished Parsing XDC File [d:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/xilinx_ip/inst_ram/inst_ram/inst_ram_in_context.xdc] for cell 'inst_ram'
+Parsing XDC File [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/soc_lite.xdc]
+WARNING: [Constraints 18-619] A clock with name 'clk' already exists, overwriting the previous clock with the same name. [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/soc_lite.xdc:5]
+Finished Parsing XDC File [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/soc_lite.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/soc_lite.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/soc_lite_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/soc_lite_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1300.664 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1300.664 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1300.664 ; gain = 53.410
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1300.664 ; gain = 53.410
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for clk. (constraint file  d:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/xilinx_ip/clk_pll/clk_pll/clk_pll_in_context.xdc, line 4).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  d:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/xilinx_ip/clk_pll/clk_pll/clk_pll_in_context.xdc, line 5).
+Applied set_property KEEP_HIERARCHY = SOFT for \pll.clk_pll . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for data_ram. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst_ram. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1300.664 ; gain = 53.410
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'div'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'confreg'
+WARNING: [Synth 8-327] inferring latch for variable 'alucontrol_reg' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/aludec.v:34]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE1 |                               00 |                               00
+                 iSTATE0 |                               01 |                               01
+                  iSTATE |                               10 |                               10
+                 iSTATE2 |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'div'
+WARNING: [Synth 8-327] inferring latch for variable 'y_reg' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/alu.v:54]
+WARNING: [Synth 8-327] inferring latch for variable 'hilo_reg' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/alu.v:176]
+WARNING: [Synth 8-327] inferring latch for variable 'div_valid_reg' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/alu.v:105]
+WARNING: [Synth 8-327] inferring latch for variable 'handled_readdataW_reg' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/read_data_handle.v:34]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE4 |                           000001 |                              000
+                  iSTATE |                           100000 |                              001
+                 iSTATE0 |                           010000 |                              010
+                 iSTATE1 |                           001000 |                              011
+                 iSTATE2 |                           000100 |                              100
+                 iSTATE3 |                           000010 |                              111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'confreg'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1300.664 ; gain = 53.410
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   64 Bit       Adders := 2     
+	   3 Input   33 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 8     
+	   3 Input   32 Bit       Adders := 1     
+	   2 Input    6 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 1     
++---XORs : 
+	   3 Input     64 Bit         XORs := 15    
+	   2 Input     32 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 18    
++---Registers : 
+	               65 Bit    Registers := 1     
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 36    
+	               16 Bit    Registers := 1     
+	               13 Bit    Registers := 1     
+	                8 Bit    Registers := 6     
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 6     
+	                4 Bit    Registers := 3     
+	                1 Bit    Registers := 20    
++---Muxes : 
+	   2 Input   65 Bit        Muxes := 5     
+	   4 Input   65 Bit        Muxes := 2     
+	   2 Input   64 Bit        Muxes := 85    
+	   4 Input   64 Bit        Muxes := 1     
+	   3 Input   64 Bit        Muxes := 2     
+	  29 Input   39 Bit        Muxes := 1     
+	   5 Input   39 Bit        Muxes := 1     
+	   2 Input   39 Bit        Muxes := 3     
+	   3 Input   39 Bit        Muxes := 1     
+	  26 Input   39 Bit        Muxes := 1     
+	   2 Input   33 Bit        Muxes := 2     
+	   2 Input   32 Bit        Muxes := 18    
+	   4 Input   32 Bit        Muxes := 3     
+	  21 Input   32 Bit        Muxes := 1     
+	   3 Input   32 Bit        Muxes := 2     
+	   2 Input   16 Bit        Muxes := 13    
+	   6 Input   16 Bit        Muxes := 1     
+	  17 Input   16 Bit        Muxes := 1     
+	  25 Input    8 Bit        Muxes := 1     
+	   4 Input    8 Bit        Muxes := 1     
+	   8 Input    8 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 1     
+	   4 Input    7 Bit        Muxes := 1     
+	   5 Input    7 Bit        Muxes := 2     
+	  16 Input    7 Bit        Muxes := 1     
+	  27 Input    7 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 7     
+	   4 Input    6 Bit        Muxes := 1     
+	   6 Input    6 Bit        Muxes := 1     
+	  42 Input    5 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 2     
+	   3 Input    4 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
+	   6 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 10    
+	   6 Input    3 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 7     
+	   4 Input    2 Bit        Muxes := 1     
+	  25 Input    1 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 25    
+	   4 Input    1 Bit        Muxes := 8     
+	  42 Input    1 Bit        Muxes := 2     
+	   6 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port dataadrW[31] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[30] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[29] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[28] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[27] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[26] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[25] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[24] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[23] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[22] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[21] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[20] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[19] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[18] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[17] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[16] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[15] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[14] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[13] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[12] in module read_data_handle is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataadrW[11] in module read_data_handle is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3332] Sequential element (confreg/FSM_onehot_state_reg[5]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (confreg/FSM_onehot_state_reg[2]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (confreg/FSM_onehot_state_reg[1]) is unused and will be removed from module soc_lite_top.
+WARNING: [Synth 8-3332] Sequential element (confreg/FSM_onehot_state_reg[0]) is unused and will be removed from module soc_lite_top.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:41 . Memory (MB): peak = 1401.137 ; gain = 153.883
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++---------------+------------+-----------+----------------------+--------------+
+|Module Name    | RTL Object | Inference | Size (Depth x Width) | Primitives   | 
++---------------+------------+-----------+----------------------+--------------+
+|\u_cpu/cpu /rf | rf_reg     | Implied   | 32 x 32              | RAM32M x 12  | 
++---------------+------------+-----------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-565] redefining clock 'clk'
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:47 ; elapsed = 00:00:47 . Memory (MB): peak = 1401.137 ; gain = 153.883
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 1401.137 ; gain = 153.883
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++---------------+------------+-----------+----------------------+--------------+
+|Module Name    | RTL Object | Inference | Size (Depth x Width) | Primitives   | 
++---------------+------------+-----------+----------------------+--------------+
+|\u_cpu/cpu /rf | rf_reg     | Implied   | 32 x 32              | RAM32M x 12  | 
++---------------+------------+-----------+----------------------+--------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:53 ; elapsed = 00:00:53 . Memory (MB): peak = 1579.680 ; gain = 332.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:58 ; elapsed = 00:00:58 . Memory (MB): peak = 1579.680 ; gain = 332.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:58 ; elapsed = 00:00:58 . Memory (MB): peak = 1579.680 ; gain = 332.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:58 ; elapsed = 00:00:59 . Memory (MB): peak = 1579.680 ; gain = 332.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:59 ; elapsed = 00:00:59 . Memory (MB): peak = 1579.680 ; gain = 332.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:59 ; elapsed = 00:00:59 . Memory (MB): peak = 1579.680 ; gain = 332.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:59 ; elapsed = 00:00:59 . Memory (MB): peak = 1579.680 ; gain = 332.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_pll       |         1|
+|2     |inst_ram      |         1|
+|3     |data_ram      |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |clk_pll  |     1|
+|2     |data_ram |     1|
+|3     |inst_ram |     1|
+|4     |BUFG     |     5|
+|5     |CARRY4   |   160|
+|6     |LUT1     |   169|
+|7     |LUT2     |   229|
+|8     |LUT3     |   684|
+|9     |LUT4     |   999|
+|10    |LUT5     |   835|
+|11    |LUT6     |  1856|
+|12    |MUXF7    |     4|
+|13    |RAM32M   |    10|
+|14    |RAM32X1D |     4|
+|15    |FDCE     |   185|
+|16    |FDPE     |     9|
+|17    |FDRE     |  1102|
+|18    |FDSE     |    12|
+|19    |LD       |    73|
+|20    |LDC      |    64|
+|21    |IBUF     |     9|
+|22    |OBUF     |    35|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:59 ; elapsed = 00:00:59 . Memory (MB): peak = 1579.680 ; gain = 332.426
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 71 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:48 ; elapsed = 00:00:56 . Memory (MB): peak = 1579.680 ; gain = 279.016
+Synthesis Optimization Complete : Time (s): cpu = 00:00:59 ; elapsed = 00:00:59 . Memory (MB): peak = 1579.680 ; gain = 332.426
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.112 . Memory (MB): peak = 1579.680 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 315 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1579.680 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 151 instances were transformed.
+  LD => LDCE: 73 instances
+  LDC => LDCE: 64 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 10 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances
+
+Synth Design complete, checksum: 4eaa2ee9
+INFO: [Common 17-83] Releasing license: Synthesis
+95 Infos, 138 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:04 ; elapsed = 00:01:05 . Memory (MB): peak = 1579.680 ; gain = 332.426
+INFO: [Common 17-1381] The checkpoint 'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.runs/synth_1/soc_lite_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file soc_lite_top_utilization_synth.rpt -pb soc_lite_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Jan  6 22:15:27 2022...

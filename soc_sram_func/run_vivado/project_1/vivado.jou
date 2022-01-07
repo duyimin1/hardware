@@ -12,3 +12,56 @@
 #-----------------------------------------------------------
 start_gui
 open_project D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.xpr
+update_compile_order -fileset sources_1
+add_files -norecurse D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/defines2.vh
+add_files -norecurse {D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mmu.v D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/maindec.v}
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/12321.wcfg
+source tb_top.tcl
+run all
+current_wave_config {12321.wcfg}
+add_wave {{/tb_top/soc_lite/u_cpu/cpu/alu/y_out}} 
+restart
+run all
+relaunch_sim
+restart
+run all
+reset_run inst_ram_synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -url localhost:3121 -allow_non_jtag
+current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210292747491A]
+set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/210292747491A]
+open_hw_target
+set_property PROGRAM.FILE {D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.runs/impl_1/soc_lite_top.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.runs/impl_1/soc_lite_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+save_wave_config {D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/12321.wcfg}
+close_sim
+launch_simulation
+open_wave_config D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/12321.wcfg
+source tb_top.tcl
+run all
+close_sim
+launch_simulation
+open_wave_config D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/12321.wcfg
+source tb_top.tcl
+run all
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+close_sim

@@ -73,3 +73,1577 @@ INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2021.2/data/ip'.
 open_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:07 . Memory (MB): peak = 1588.453 ; gain = 0.000
+update_compile_order -fileset sources_1
+add_files -norecurse D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/defines2.vh
+WARNING: [filemgmt 56-12] File 'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/defines2.vh' cannot be added to the project because it already exists in the project, skipping this file
+add_files -norecurse {D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mmu.v D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/maindec.v}
+WARNING: [filemgmt 56-12] File 'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/maindec.v' cannot be added to the project because it already exists in the project, skipping this file
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_top'
+WARNING: [Vivado 12-12986] Compiled library path does not exist: ''
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2021.2/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2021.2/data/xsim/xsim.ini' copied to run dir:'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim/inst_ram.mif'
+INFO: [SIM-utils-43] Exported 'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim/inst_ram.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_top_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_5 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2021.2
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2021.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_5 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 1 for port 'int' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/soc_lite_top.v:142]
+WARNING: [VRFC 10-3091] actual bit length 3 differs from formal bit length 8 for port 'd' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:88]
+WARNING: [VRFC 10-3091] actual bit length 3 differs from formal bit length 8 for port 'q' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:89]
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 8 for port 'd' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:93]
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 8 for port 'q' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:94]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'wea' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/soc_lite_top.v:168]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_top_behav -key {Behavioral:sim_1:Functional:tb_top} -tclbatch {tb_top.tcl} -view {D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/12321.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/12321.wcfg
+source tb_top.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.soc_lite.inst_ram.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_top_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1588.453 ; gain = 0.000
+run all
+==============================================================
+Test begin!
+----[   7675 ns] Number 8'd01 Functional Test Point PASS!!!
+----[  17835 ns] Number 8'd02 Functional Test Point PASS!!!
+        [  22000 ns] Test is running, debug_wb_pc = 0xbfc6fe14
+----[  27985 ns] Number 8'd03 Functional Test Point PASS!!!
+        [  32000 ns] Test is running, debug_wb_pc = 0xbfc4a9b4
+----[  36975 ns] Number 8'd04 Functional Test Point PASS!!!
+        [  42000 ns] Test is running, debug_wb_pc = 0xbfc21024
+----[  51665 ns] Number 8'd05 Functional Test Point PASS!!!
+        [  52000 ns] Test is running, debug_wb_pc = 0xbfc35d68
+        [  62000 ns] Test is running, debug_wb_pc = 0xbfc36d08
+----[  64745 ns] Number 8'd06 Functional Test Point PASS!!!
+        [  72000 ns] Test is running, debug_wb_pc = 0xbfc54720
+----[  80695 ns] Number 8'd07 Functional Test Point PASS!!!
+        [  82000 ns] Test is running, debug_wb_pc = 0xbfc557b0
+        [  92000 ns] Test is running, debug_wb_pc = 0xbfc56578
+----[  94825 ns] Number 8'd08 Functional Test Point PASS!!!
+        [ 102000 ns] Test is running, debug_wb_pc = 0xbfc35740
+----[ 106605 ns] Number 8'd09 Functional Test Point PASS!!!
+        [ 112000 ns] Test is running, debug_wb_pc = 0xbfc344e0
+----[ 118875 ns] Number 8'd10 Functional Test Point PASS!!!
+        [ 122000 ns] Test is running, debug_wb_pc = 0x00000000
+----[ 131615 ns] Number 8'd11 Functional Test Point PASS!!!
+        [ 132000 ns] Test is running, debug_wb_pc = 0xbfc0364c
+        [ 142000 ns] Test is running, debug_wb_pc = 0xbfc045ec
+----[ 146285 ns] Number 8'd12 Functional Test Point PASS!!!
+        [ 152000 ns] Test is running, debug_wb_pc = 0xbfc37f58
+        [ 162000 ns] Test is running, debug_wb_pc = 0xbfc393a8
+----[ 170875 ns] Number 8'd13 Functional Test Point PASS!!!
+        [ 172000 ns] Test is running, debug_wb_pc = 0xbfc3db9c
+        [ 182000 ns] Test is running, debug_wb_pc = 0xbfc3ee9c
+        [ 192000 ns] Test is running, debug_wb_pc = 0xbfc401a4
+        [ 202000 ns] Test is running, debug_wb_pc = 0xbfc41484
+----[ 205425 ns] Number 8'd14 Functional Test Point PASS!!!
+        [ 212000 ns] Test is running, debug_wb_pc = 0xbfc6a58c
+        [ 222000 ns] Test is running, debug_wb_pc = 0xbfc6b84c
+        [ 232000 ns] Test is running, debug_wb_pc = 0xbfc6cb0c
+----[ 241315 ns] Number 8'd15 Functional Test Point PASS!!!
+        [ 242000 ns] Test is running, debug_wb_pc = 0xbfc5f7a0
+----[ 245085 ns] Number 8'd16 Functional Test Point PASS!!!
+----[ 249115 ns] Number 8'd17 Functional Test Point PASS!!!
+----[ 251065 ns] Number 8'd18 Functional Test Point PASS!!!
+        [ 252000 ns] Test is running, debug_wb_pc = 0xbfc2e250
+----[ 253285 ns] Number 8'd19 Functional Test Point PASS!!!
+----[ 255755 ns] Number 8'd20 Functional Test Point PASS!!!
+        [ 262000 ns] Test is running, debug_wb_pc = 0xbfc64bc8
+----[ 271615 ns] Number 8'd21 Functional Test Point PASS!!!
+        [ 272000 ns] Test is running, debug_wb_pc = 0x00000000
+        [ 282000 ns] Test is running, debug_wb_pc = 0xbfc09b3c
+----[ 284585 ns] Number 8'd22 Functional Test Point PASS!!!
+        [ 292000 ns] Test is running, debug_wb_pc = 0xbfc2b09c
+----[ 300635 ns] Number 8'd23 Functional Test Point PASS!!!
+        [ 302000 ns] Test is running, debug_wb_pc = 0xbfc0a02c
+        [ 312000 ns] Test is running, debug_wb_pc = 0xbfc0ae2c
+----[ 317895 ns] Number 8'd24 Functional Test Point PASS!!!
+        [ 322000 ns] Test is running, debug_wb_pc = 0xbfc06a94
+        [ 332000 ns] Test is running, debug_wb_pc = 0xbfc07850
+----[ 333015 ns] Number 8'd25 Functional Test Point PASS!!!
+        [ 342000 ns] Test is running, debug_wb_pc = 0xbfc45358
+----[ 342175 ns] Number 8'd26 Functional Test Point PASS!!!
+----[ 349415 ns] Number 8'd27 Functional Test Point PASS!!!
+        [ 352000 ns] Test is running, debug_wb_pc = 0xbfc70984
+----[ 360405 ns] Number 8'd28 Functional Test Point PASS!!!
+        [ 362000 ns] Test is running, debug_wb_pc = 0xbfc5ecd0
+----[ 369535 ns] Number 8'd29 Functional Test Point PASS!!!
+        [ 372000 ns] Test is running, debug_wb_pc = 0xbfc3c678
+        [ 382000 ns] Test is running, debug_wb_pc = 0xbfc3d470
+----[ 385995 ns] Number 8'd30 Functional Test Point PASS!!!
+        [ 392000 ns] Test is running, debug_wb_pc = 0xbfc08188
+----[ 398645 ns] Number 8'd31 Functional Test Point PASS!!!
+        [ 402000 ns] Test is running, debug_wb_pc = 0xbfc5da30
+        [ 412000 ns] Test is running, debug_wb_pc = 0xbfc5e7f4
+----[ 414245 ns] Number 8'd32 Functional Test Point PASS!!!
+        [ 422000 ns] Test is running, debug_wb_pc = 0xbfc60638
+----[ 427905 ns] Number 8'd33 Functional Test Point PASS!!!
+        [ 432000 ns] Test is running, debug_wb_pc = 0xbfc0c1a8
+----[ 441695 ns] Number 8'd34 Functional Test Point PASS!!!
+        [ 442000 ns] Test is running, debug_wb_pc = 0xbfc00938
+        [ 452000 ns] Test is running, debug_wb_pc = 0xbfc060e4
+----[ 455315 ns] Number 8'd35 Functional Test Point PASS!!!
+        [ 462000 ns] Test is running, debug_wb_pc = 0xbfc66708
+----[ 471155 ns] Number 8'd36 Functional Test Point PASS!!!
+        [ 472000 ns] Test is running, debug_wb_pc = 0xbfc4b5c4
+        [ 482000 ns] Test is running, debug_wb_pc = 0xbfc4ca50
+        [ 492000 ns] Test is running, debug_wb_pc = 0xbfc4def8
+        [ 502000 ns] Test is running, debug_wb_pc = 0x00000000
+        [ 512000 ns] Test is running, debug_wb_pc = 0xbfc50858
+----[ 512465 ns] Number 8'd37 Functional Test Point PASS!!!
+        [ 522000 ns] Test is running, debug_wb_pc = 0xbfc1c414
+        [ 532000 ns] Test is running, debug_wb_pc = 0xbfc1d8f0
+        [ 542000 ns] Test is running, debug_wb_pc = 0xbfc1ed6c
+        [ 552000 ns] Test is running, debug_wb_pc = 0xbfc2025c
+----[ 553575 ns] Number 8'd38 Functional Test Point PASS!!!
+        [ 562000 ns] Test is running, debug_wb_pc = 0xbfc5922c
+        [ 572000 ns] Test is running, debug_wb_pc = 0xbfc5a6a4
+        [ 582000 ns] Test is running, debug_wb_pc = 0xbfc5bb50
+        [ 592000 ns] Test is running, debug_wb_pc = 0xbfc5d020
+----[ 594885 ns] Number 8'd39 Functional Test Point PASS!!!
+        [ 602000 ns] Test is running, debug_wb_pc = 0xbfc47348
+        [ 612000 ns] Test is running, debug_wb_pc = 0xbfc4865c
+        [ 622000 ns] Test is running, debug_wb_pc = 0xbfc4997c
+----[ 626855 ns] Number 8'd40 Functional Test Point PASS!!!
+        [ 632000 ns] Test is running, debug_wb_pc = 0xbfc23910
+        [ 642000 ns] Test is running, debug_wb_pc = 0xbfc24ba8
+        [ 652000 ns] Test is running, debug_wb_pc = 0xbfc25e18
+        [ 662000 ns] Test is running, debug_wb_pc = 0xbfc270c4
+        [ 672000 ns] Test is running, debug_wb_pc = 0xbfc283ac
+----[ 673925 ns] Number 8'd41 Functional Test Point PASS!!!
+        [ 682000 ns] Test is running, debug_wb_pc = 0xbfc1646c
+        [ 692000 ns] Test is running, debug_wb_pc = 0xbfc1773c
+        [ 702000 ns] Test is running, debug_wb_pc = 0xbfc189e8
+        [ 712000 ns] Test is running, debug_wb_pc = 0xbfc19c4c
+        [ 722000 ns] Test is running, debug_wb_pc = 0xbfc1aef0
+----[ 723165 ns] Number 8'd42 Functional Test Point PASS!!!
+        [ 732000 ns] Test is running, debug_wb_pc = 0xbfc106c4
+        [ 742000 ns] Test is running, debug_wb_pc = 0xbfc1174c
+        [ 752000 ns] Test is running, debug_wb_pc = 0xbfc127b8
+        [ 762000 ns] Test is running, debug_wb_pc = 0xbfc1381c
+        [ 772000 ns] Test is running, debug_wb_pc = 0xbfc148a4
+----[ 776755 ns] Number 8'd43 Functional Test Point PASS!!!
+--------------------------------------------------------------
+[ 778467 ns] Error!!!
+    reference: PC = 0xbfc3a93c, wb_rf_wnum = 0x15, wb_rf_wdata = 0x0000000a
+    mycpu    : PC = 0xbfc3a93c, wb_rf_wnum = 0x15, wb_rf_wdata = 0xfffffff6
+--------------------------------------------------------------
+$finish called at time : 778507 ns : File "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/testbench/mycpu_tb.v" Line 152
+run: Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 1588.453 ; gain = 0.000
+current_wave_config {12321.wcfg}
+12321.wcfg
+add_wave {{/tb_top/soc_lite/u_cpu/cpu/alu/y_out}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run all
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.soc_lite.inst_ram.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+==============================================================
+Test begin!
+----[   7675 ns] Number 8'd01 Functional Test Point PASS!!!
+----[  17835 ns] Number 8'd02 Functional Test Point PASS!!!
+        [  22000 ns] Test is running, debug_wb_pc = 0xbfc6fe14
+----[  27985 ns] Number 8'd03 Functional Test Point PASS!!!
+        [  32000 ns] Test is running, debug_wb_pc = 0xbfc4a9b4
+----[  36975 ns] Number 8'd04 Functional Test Point PASS!!!
+        [  42000 ns] Test is running, debug_wb_pc = 0xbfc21024
+----[  51665 ns] Number 8'd05 Functional Test Point PASS!!!
+        [  52000 ns] Test is running, debug_wb_pc = 0xbfc35d68
+        [  62000 ns] Test is running, debug_wb_pc = 0xbfc36d08
+----[  64745 ns] Number 8'd06 Functional Test Point PASS!!!
+        [  72000 ns] Test is running, debug_wb_pc = 0xbfc54720
+----[  80695 ns] Number 8'd07 Functional Test Point PASS!!!
+        [  82000 ns] Test is running, debug_wb_pc = 0xbfc557b0
+        [  92000 ns] Test is running, debug_wb_pc = 0xbfc56578
+----[  94825 ns] Number 8'd08 Functional Test Point PASS!!!
+        [ 102000 ns] Test is running, debug_wb_pc = 0xbfc35740
+----[ 106605 ns] Number 8'd09 Functional Test Point PASS!!!
+        [ 112000 ns] Test is running, debug_wb_pc = 0xbfc344e0
+----[ 118875 ns] Number 8'd10 Functional Test Point PASS!!!
+        [ 122000 ns] Test is running, debug_wb_pc = 0x00000000
+----[ 131615 ns] Number 8'd11 Functional Test Point PASS!!!
+        [ 132000 ns] Test is running, debug_wb_pc = 0xbfc0364c
+        [ 142000 ns] Test is running, debug_wb_pc = 0xbfc045ec
+----[ 146285 ns] Number 8'd12 Functional Test Point PASS!!!
+        [ 152000 ns] Test is running, debug_wb_pc = 0xbfc37f58
+        [ 162000 ns] Test is running, debug_wb_pc = 0xbfc393a8
+----[ 170875 ns] Number 8'd13 Functional Test Point PASS!!!
+        [ 172000 ns] Test is running, debug_wb_pc = 0xbfc3db9c
+        [ 182000 ns] Test is running, debug_wb_pc = 0xbfc3ee9c
+        [ 192000 ns] Test is running, debug_wb_pc = 0xbfc401a4
+        [ 202000 ns] Test is running, debug_wb_pc = 0xbfc41484
+----[ 205425 ns] Number 8'd14 Functional Test Point PASS!!!
+        [ 212000 ns] Test is running, debug_wb_pc = 0xbfc6a58c
+        [ 222000 ns] Test is running, debug_wb_pc = 0xbfc6b84c
+        [ 232000 ns] Test is running, debug_wb_pc = 0xbfc6cb0c
+----[ 241315 ns] Number 8'd15 Functional Test Point PASS!!!
+        [ 242000 ns] Test is running, debug_wb_pc = 0xbfc5f7a0
+----[ 245085 ns] Number 8'd16 Functional Test Point PASS!!!
+----[ 249115 ns] Number 8'd17 Functional Test Point PASS!!!
+----[ 251065 ns] Number 8'd18 Functional Test Point PASS!!!
+        [ 252000 ns] Test is running, debug_wb_pc = 0xbfc2e250
+----[ 253285 ns] Number 8'd19 Functional Test Point PASS!!!
+----[ 255755 ns] Number 8'd20 Functional Test Point PASS!!!
+        [ 262000 ns] Test is running, debug_wb_pc = 0xbfc64bc8
+----[ 271615 ns] Number 8'd21 Functional Test Point PASS!!!
+        [ 272000 ns] Test is running, debug_wb_pc = 0x00000000
+        [ 282000 ns] Test is running, debug_wb_pc = 0xbfc09b3c
+----[ 284585 ns] Number 8'd22 Functional Test Point PASS!!!
+        [ 292000 ns] Test is running, debug_wb_pc = 0xbfc2b09c
+----[ 300635 ns] Number 8'd23 Functional Test Point PASS!!!
+        [ 302000 ns] Test is running, debug_wb_pc = 0xbfc0a02c
+        [ 312000 ns] Test is running, debug_wb_pc = 0xbfc0ae2c
+----[ 317895 ns] Number 8'd24 Functional Test Point PASS!!!
+        [ 322000 ns] Test is running, debug_wb_pc = 0xbfc06a94
+        [ 332000 ns] Test is running, debug_wb_pc = 0xbfc07850
+----[ 333015 ns] Number 8'd25 Functional Test Point PASS!!!
+        [ 342000 ns] Test is running, debug_wb_pc = 0xbfc45358
+----[ 342175 ns] Number 8'd26 Functional Test Point PASS!!!
+----[ 349415 ns] Number 8'd27 Functional Test Point PASS!!!
+        [ 352000 ns] Test is running, debug_wb_pc = 0xbfc70984
+----[ 360405 ns] Number 8'd28 Functional Test Point PASS!!!
+        [ 362000 ns] Test is running, debug_wb_pc = 0xbfc5ecd0
+----[ 369535 ns] Number 8'd29 Functional Test Point PASS!!!
+        [ 372000 ns] Test is running, debug_wb_pc = 0xbfc3c678
+        [ 382000 ns] Test is running, debug_wb_pc = 0xbfc3d470
+----[ 385995 ns] Number 8'd30 Functional Test Point PASS!!!
+        [ 392000 ns] Test is running, debug_wb_pc = 0xbfc08188
+----[ 398645 ns] Number 8'd31 Functional Test Point PASS!!!
+        [ 402000 ns] Test is running, debug_wb_pc = 0xbfc5da30
+        [ 412000 ns] Test is running, debug_wb_pc = 0xbfc5e7f4
+----[ 414245 ns] Number 8'd32 Functional Test Point PASS!!!
+        [ 422000 ns] Test is running, debug_wb_pc = 0xbfc60638
+----[ 427905 ns] Number 8'd33 Functional Test Point PASS!!!
+        [ 432000 ns] Test is running, debug_wb_pc = 0xbfc0c1a8
+----[ 441695 ns] Number 8'd34 Functional Test Point PASS!!!
+        [ 442000 ns] Test is running, debug_wb_pc = 0xbfc00938
+        [ 452000 ns] Test is running, debug_wb_pc = 0xbfc060e4
+----[ 455315 ns] Number 8'd35 Functional Test Point PASS!!!
+        [ 462000 ns] Test is running, debug_wb_pc = 0xbfc66708
+----[ 471155 ns] Number 8'd36 Functional Test Point PASS!!!
+        [ 472000 ns] Test is running, debug_wb_pc = 0xbfc4b5c4
+        [ 482000 ns] Test is running, debug_wb_pc = 0xbfc4ca50
+        [ 492000 ns] Test is running, debug_wb_pc = 0xbfc4def8
+        [ 502000 ns] Test is running, debug_wb_pc = 0x00000000
+        [ 512000 ns] Test is running, debug_wb_pc = 0xbfc50858
+----[ 512465 ns] Number 8'd37 Functional Test Point PASS!!!
+        [ 522000 ns] Test is running, debug_wb_pc = 0xbfc1c414
+        [ 532000 ns] Test is running, debug_wb_pc = 0xbfc1d8f0
+        [ 542000 ns] Test is running, debug_wb_pc = 0xbfc1ed6c
+        [ 552000 ns] Test is running, debug_wb_pc = 0xbfc2025c
+----[ 553575 ns] Number 8'd38 Functional Test Point PASS!!!
+        [ 562000 ns] Test is running, debug_wb_pc = 0xbfc5922c
+        [ 572000 ns] Test is running, debug_wb_pc = 0xbfc5a6a4
+        [ 582000 ns] Test is running, debug_wb_pc = 0xbfc5bb50
+        [ 592000 ns] Test is running, debug_wb_pc = 0xbfc5d020
+----[ 594885 ns] Number 8'd39 Functional Test Point PASS!!!
+        [ 602000 ns] Test is running, debug_wb_pc = 0xbfc47348
+        [ 612000 ns] Test is running, debug_wb_pc = 0xbfc4865c
+        [ 622000 ns] Test is running, debug_wb_pc = 0xbfc4997c
+----[ 626855 ns] Number 8'd40 Functional Test Point PASS!!!
+        [ 632000 ns] Test is running, debug_wb_pc = 0xbfc23910
+        [ 642000 ns] Test is running, debug_wb_pc = 0xbfc24ba8
+        [ 652000 ns] Test is running, debug_wb_pc = 0xbfc25e18
+        [ 662000 ns] Test is running, debug_wb_pc = 0xbfc270c4
+        [ 672000 ns] Test is running, debug_wb_pc = 0xbfc283ac
+----[ 673925 ns] Number 8'd41 Functional Test Point PASS!!!
+        [ 682000 ns] Test is running, debug_wb_pc = 0xbfc1646c
+        [ 692000 ns] Test is running, debug_wb_pc = 0xbfc1773c
+        [ 702000 ns] Test is running, debug_wb_pc = 0xbfc189e8
+        [ 712000 ns] Test is running, debug_wb_pc = 0xbfc19c4c
+        [ 722000 ns] Test is running, debug_wb_pc = 0xbfc1aef0
+----[ 723165 ns] Number 8'd42 Functional Test Point PASS!!!
+        [ 732000 ns] Test is running, debug_wb_pc = 0xbfc106c4
+        [ 742000 ns] Test is running, debug_wb_pc = 0xbfc1174c
+        [ 752000 ns] Test is running, debug_wb_pc = 0xbfc127b8
+        [ 762000 ns] Test is running, debug_wb_pc = 0xbfc1381c
+        [ 772000 ns] Test is running, debug_wb_pc = 0xbfc148a4
+----[ 776755 ns] Number 8'd43 Functional Test Point PASS!!!
+--------------------------------------------------------------
+[ 778467 ns] Error!!!
+    reference: PC = 0xbfc3a93c, wb_rf_wnum = 0x15, wb_rf_wdata = 0x0000000a
+    mycpu    : PC = 0xbfc3a93c, wb_rf_wnum = 0x15, wb_rf_wdata = 0xfffffff6
+--------------------------------------------------------------
+$finish called at time : 778507 ns : File "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/testbench/mycpu_tb.v" Line 152
+run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 1588.453 ; gain = 0.000
+relaunch_sim
+INFO: xsimkernel Simulation Memory Usage: 19944 KB (Peak: 19944 KB), Simulation CPU Usage: 20030 ms
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_top'
+WARNING: [Vivado 12-12986] Compiled library path does not exist: ''
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2021.2/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2021.2/data/xsim/xsim.ini' copied to run dir:'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim/inst_ram.mif'
+INFO: [SIM-utils-43] Exported 'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim/inst_ram.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_top_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/xilinx_ip/clk_pll/clk_pll_sim_netlist.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_pll
+INFO: [VRFC 10-311] analyzing module clk_pll_clk_wiz
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/xilinx_ip/data_ram/data_ram_sim_netlist.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_ram
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_generic_cstr
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_prim_width
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_prim_width__parameterized0
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_prim_width__parameterized1
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_prim_width__parameterized2
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_prim_wrapper
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_prim_wrapper__parameterized0
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_prim_wrapper__parameterized1
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_prim_wrapper__parameterized2
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_top
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_v8_4_5
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_v8_4_5_synth
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/xilinx_ip/inst_ram/sim/inst_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module inst_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/aludec.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aludec
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/BRIDGE/bridge_1x2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bridge_1x2
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/CONFREG/confreg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module confreg
+INFO: [VRFC 10-2458] undeclared symbol conf_we, assumed default net type wire [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/CONFREG/confreg.v:160]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/div.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module div
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/eqcmp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eqcmp
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/flopenrc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module flopenrc
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/flopr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module flopr
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/hazard.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hazard
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/step_into_mips-lab_4/lab_4/rtl/instdec.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module instdec
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/maindec.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module maindec
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/step_into_mips-lab_4/lab_4/rtl/mmu/mmu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mux2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mux3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux3
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/my_mul.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module my_mul
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mycpu
+INFO: [VRFC 10-2458] undeclared symbol rtD, assumed default net type wire [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:62]
+INFO: [VRFC 10-2458] undeclared symbol branchD, assumed default net type wire [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:64]
+INFO: [VRFC 10-2458] undeclared symbol stallE, assumed default net type wire [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:79]
+WARNING: [VRFC 10-2938] 'rtD' is already implicitly declared on line 62 [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:105]
+WARNING: [VRFC 10-2938] 'stallE' is already implicitly declared on line 79 [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:119]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.srcs/sources_1/new/mycpu_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mycpu_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/pc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/read_data_handle.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module read_data_handle
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/regfile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/signext.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module signext
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/sl2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sl2
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/soc_lite_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module soc_lite_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/write_data_handle.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module write_data_handle
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/testbench/mycpu_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_top
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_top'
+WARNING: [Vivado 12-12986] Compiled library path does not exist: ''
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_5 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2021.2
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2021.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_5 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 1 for port 'int' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/soc_lite_top.v:142]
+WARNING: [VRFC 10-3091] actual bit length 3 differs from formal bit length 8 for port 'd' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:88]
+WARNING: [VRFC 10-3091] actual bit length 3 differs from formal bit length 8 for port 'q' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:89]
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 8 for port 'd' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:93]
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 8 for port 'q' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:94]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'wea' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/soc_lite_top.v:168]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.instdec
+Compiling module xil_defaultlib.maindec
+Compiling module xil_defaultlib.aludec
+Compiling module xil_defaultlib.flopenrc(WIDTH=13)
+Compiling module xil_defaultlib.flopenrc(WIDTH=1)
+Compiling module xil_defaultlib.flopr
+Compiling module xil_defaultlib.hazard
+Compiling module xil_defaultlib.mux2(WIDTH=32)
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.pc(WIDTH=32)
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.flopenrc(WIDTH=32)
+Compiling module xil_defaultlib.signext
+Compiling module xil_defaultlib.sl2
+Compiling module xil_defaultlib.eqcmp
+Compiling module xil_defaultlib.flopenrc(WIDTH=5)
+Compiling module xil_defaultlib.mux3(WIDTH=32)
+Compiling module xil_defaultlib.my_mul
+Compiling module xil_defaultlib.div
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.mux2(WIDTH=5)
+Compiling module xil_defaultlib.write_data_handle
+Compiling module xil_defaultlib.flopr(WIDTH=32)
+Compiling module xil_defaultlib.flopr(WIDTH=5)
+Compiling module xil_defaultlib.flopr(WIDTH=4)
+Compiling module xil_defaultlib.read_data_handle
+Compiling module xil_defaultlib.mycpu
+Compiling module xil_defaultlib.mmu
+Compiling module xil_defaultlib.mycpu_top
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="art...
+Compiling module xil_defaultlib.inst_ram
+Compiling module xil_defaultlib.bridge_1x2
+Compiling module unisims_ver.GND
+Compiling module unisims_ver.RB36_INTERNAL_VLOG(RDADDR_COLLIS...
+Compiling module unisims_ver.RAMB36E1(RDADDR_COLLISION_HWCONF...
+Compiling module xil_defaultlib.data_ram
+Compiling module xil_defaultlib.confreg(SIMULATION=1'b1)
+Compiling module xil_defaultlib.soc_lite_top(SIMULATION=1'b1)
+Compiling module xil_defaultlib.tb_top
+WARNING: [XSIM 43-3373] "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/testbench/mycpu_tb.v" Line 123. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_top_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 1588.453 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '9' seconds
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 1588.453 ; gain = 0.000
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.soc_lite.inst_ram.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:14 . Memory (MB): peak = 1588.453 ; gain = 0.000
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run all
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.soc_lite.inst_ram.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+==============================================================
+Test begin!
+----[   7675 ns] Number 8'd01 Functional Test Point PASS!!!
+----[  17835 ns] Number 8'd02 Functional Test Point PASS!!!
+        [  22000 ns] Test is running, debug_wb_pc = 0xbfc6fe14
+----[  27985 ns] Number 8'd03 Functional Test Point PASS!!!
+        [  32000 ns] Test is running, debug_wb_pc = 0xbfc4a9b4
+----[  36975 ns] Number 8'd04 Functional Test Point PASS!!!
+        [  42000 ns] Test is running, debug_wb_pc = 0xbfc21024
+----[  51665 ns] Number 8'd05 Functional Test Point PASS!!!
+        [  52000 ns] Test is running, debug_wb_pc = 0xbfc35d68
+        [  62000 ns] Test is running, debug_wb_pc = 0xbfc36d08
+----[  64745 ns] Number 8'd06 Functional Test Point PASS!!!
+        [  72000 ns] Test is running, debug_wb_pc = 0xbfc54720
+----[  80695 ns] Number 8'd07 Functional Test Point PASS!!!
+        [  82000 ns] Test is running, debug_wb_pc = 0xbfc557b0
+        [  92000 ns] Test is running, debug_wb_pc = 0xbfc56578
+----[  94825 ns] Number 8'd08 Functional Test Point PASS!!!
+        [ 102000 ns] Test is running, debug_wb_pc = 0xbfc35740
+----[ 106605 ns] Number 8'd09 Functional Test Point PASS!!!
+        [ 112000 ns] Test is running, debug_wb_pc = 0xbfc344e0
+----[ 118875 ns] Number 8'd10 Functional Test Point PASS!!!
+        [ 122000 ns] Test is running, debug_wb_pc = 0x00000000
+----[ 131615 ns] Number 8'd11 Functional Test Point PASS!!!
+        [ 132000 ns] Test is running, debug_wb_pc = 0xbfc0364c
+        [ 142000 ns] Test is running, debug_wb_pc = 0xbfc045ec
+----[ 146285 ns] Number 8'd12 Functional Test Point PASS!!!
+        [ 152000 ns] Test is running, debug_wb_pc = 0xbfc37f58
+        [ 162000 ns] Test is running, debug_wb_pc = 0xbfc393a8
+----[ 170875 ns] Number 8'd13 Functional Test Point PASS!!!
+        [ 172000 ns] Test is running, debug_wb_pc = 0xbfc3db9c
+        [ 182000 ns] Test is running, debug_wb_pc = 0xbfc3ee9c
+        [ 192000 ns] Test is running, debug_wb_pc = 0xbfc401a4
+        [ 202000 ns] Test is running, debug_wb_pc = 0xbfc41484
+----[ 205425 ns] Number 8'd14 Functional Test Point PASS!!!
+        [ 212000 ns] Test is running, debug_wb_pc = 0xbfc6a58c
+        [ 222000 ns] Test is running, debug_wb_pc = 0xbfc6b84c
+        [ 232000 ns] Test is running, debug_wb_pc = 0xbfc6cb0c
+----[ 241315 ns] Number 8'd15 Functional Test Point PASS!!!
+        [ 242000 ns] Test is running, debug_wb_pc = 0xbfc5f7a0
+----[ 245085 ns] Number 8'd16 Functional Test Point PASS!!!
+----[ 249115 ns] Number 8'd17 Functional Test Point PASS!!!
+----[ 251065 ns] Number 8'd18 Functional Test Point PASS!!!
+        [ 252000 ns] Test is running, debug_wb_pc = 0xbfc2e250
+----[ 253285 ns] Number 8'd19 Functional Test Point PASS!!!
+----[ 255755 ns] Number 8'd20 Functional Test Point PASS!!!
+        [ 262000 ns] Test is running, debug_wb_pc = 0xbfc64bc8
+----[ 271615 ns] Number 8'd21 Functional Test Point PASS!!!
+        [ 272000 ns] Test is running, debug_wb_pc = 0x00000000
+        [ 282000 ns] Test is running, debug_wb_pc = 0xbfc09b3c
+----[ 284585 ns] Number 8'd22 Functional Test Point PASS!!!
+        [ 292000 ns] Test is running, debug_wb_pc = 0xbfc2b09c
+----[ 300635 ns] Number 8'd23 Functional Test Point PASS!!!
+        [ 302000 ns] Test is running, debug_wb_pc = 0xbfc0a02c
+        [ 312000 ns] Test is running, debug_wb_pc = 0xbfc0ae2c
+----[ 317895 ns] Number 8'd24 Functional Test Point PASS!!!
+        [ 322000 ns] Test is running, debug_wb_pc = 0xbfc06a94
+        [ 332000 ns] Test is running, debug_wb_pc = 0xbfc07850
+----[ 333015 ns] Number 8'd25 Functional Test Point PASS!!!
+        [ 342000 ns] Test is running, debug_wb_pc = 0xbfc45358
+----[ 342175 ns] Number 8'd26 Functional Test Point PASS!!!
+----[ 349415 ns] Number 8'd27 Functional Test Point PASS!!!
+        [ 352000 ns] Test is running, debug_wb_pc = 0xbfc70984
+----[ 360405 ns] Number 8'd28 Functional Test Point PASS!!!
+        [ 362000 ns] Test is running, debug_wb_pc = 0xbfc5ecd0
+----[ 369535 ns] Number 8'd29 Functional Test Point PASS!!!
+        [ 372000 ns] Test is running, debug_wb_pc = 0xbfc3c678
+        [ 382000 ns] Test is running, debug_wb_pc = 0xbfc3d470
+----[ 385995 ns] Number 8'd30 Functional Test Point PASS!!!
+        [ 392000 ns] Test is running, debug_wb_pc = 0xbfc08188
+----[ 398645 ns] Number 8'd31 Functional Test Point PASS!!!
+        [ 402000 ns] Test is running, debug_wb_pc = 0xbfc5da30
+        [ 412000 ns] Test is running, debug_wb_pc = 0xbfc5e7f4
+----[ 414245 ns] Number 8'd32 Functional Test Point PASS!!!
+        [ 422000 ns] Test is running, debug_wb_pc = 0xbfc60638
+----[ 427905 ns] Number 8'd33 Functional Test Point PASS!!!
+        [ 432000 ns] Test is running, debug_wb_pc = 0xbfc0c1a8
+----[ 441695 ns] Number 8'd34 Functional Test Point PASS!!!
+        [ 442000 ns] Test is running, debug_wb_pc = 0xbfc00938
+        [ 452000 ns] Test is running, debug_wb_pc = 0xbfc060e4
+----[ 455315 ns] Number 8'd35 Functional Test Point PASS!!!
+        [ 462000 ns] Test is running, debug_wb_pc = 0xbfc66708
+----[ 471155 ns] Number 8'd36 Functional Test Point PASS!!!
+        [ 472000 ns] Test is running, debug_wb_pc = 0xbfc4b5c4
+        [ 482000 ns] Test is running, debug_wb_pc = 0xbfc4ca50
+        [ 492000 ns] Test is running, debug_wb_pc = 0xbfc4def8
+        [ 502000 ns] Test is running, debug_wb_pc = 0x00000000
+        [ 512000 ns] Test is running, debug_wb_pc = 0xbfc50858
+----[ 512465 ns] Number 8'd37 Functional Test Point PASS!!!
+        [ 522000 ns] Test is running, debug_wb_pc = 0xbfc1c414
+        [ 532000 ns] Test is running, debug_wb_pc = 0xbfc1d8f0
+        [ 542000 ns] Test is running, debug_wb_pc = 0xbfc1ed6c
+        [ 552000 ns] Test is running, debug_wb_pc = 0xbfc2025c
+----[ 553575 ns] Number 8'd38 Functional Test Point PASS!!!
+        [ 562000 ns] Test is running, debug_wb_pc = 0xbfc5922c
+        [ 572000 ns] Test is running, debug_wb_pc = 0xbfc5a6a4
+        [ 582000 ns] Test is running, debug_wb_pc = 0xbfc5bb50
+        [ 592000 ns] Test is running, debug_wb_pc = 0xbfc5d020
+----[ 594885 ns] Number 8'd39 Functional Test Point PASS!!!
+        [ 602000 ns] Test is running, debug_wb_pc = 0xbfc47348
+        [ 612000 ns] Test is running, debug_wb_pc = 0xbfc4865c
+        [ 622000 ns] Test is running, debug_wb_pc = 0xbfc4997c
+----[ 626855 ns] Number 8'd40 Functional Test Point PASS!!!
+        [ 632000 ns] Test is running, debug_wb_pc = 0xbfc23910
+        [ 642000 ns] Test is running, debug_wb_pc = 0xbfc24ba8
+        [ 652000 ns] Test is running, debug_wb_pc = 0xbfc25e18
+        [ 662000 ns] Test is running, debug_wb_pc = 0xbfc270c4
+        [ 672000 ns] Test is running, debug_wb_pc = 0xbfc283ac
+----[ 673925 ns] Number 8'd41 Functional Test Point PASS!!!
+        [ 682000 ns] Test is running, debug_wb_pc = 0xbfc1646c
+        [ 692000 ns] Test is running, debug_wb_pc = 0xbfc1773c
+        [ 702000 ns] Test is running, debug_wb_pc = 0xbfc189e8
+        [ 712000 ns] Test is running, debug_wb_pc = 0xbfc19c4c
+        [ 722000 ns] Test is running, debug_wb_pc = 0xbfc1aef0
+----[ 723165 ns] Number 8'd42 Functional Test Point PASS!!!
+        [ 732000 ns] Test is running, debug_wb_pc = 0xbfc106c4
+        [ 742000 ns] Test is running, debug_wb_pc = 0xbfc1174c
+        [ 752000 ns] Test is running, debug_wb_pc = 0xbfc127b8
+        [ 762000 ns] Test is running, debug_wb_pc = 0xbfc1381c
+        [ 772000 ns] Test is running, debug_wb_pc = 0xbfc148a4
+----[ 776755 ns] Number 8'd43 Functional Test Point PASS!!!
+        [ 782000 ns] Test is running, debug_wb_pc = 0xbfc3aaec
+        [ 792000 ns] Test is running, debug_wb_pc = 0xbfc3af58
+        [ 802000 ns] Test is running, debug_wb_pc = 0xbfc3b3c0
+        [ 812000 ns] Test is running, debug_wb_pc = 0xbfc3b850
+        [ 822000 ns] Test is running, debug_wb_pc = 0xbfc3bcb0
+        [ 832000 ns] Test is running, debug_wb_pc = 0xbfc3c144
+----[ 836865 ns] Number 8'd44 Functional Test Point PASS!!!
+        [ 842000 ns] Test is running, debug_wb_pc = 0xbfc316b0
+        [ 852000 ns] Test is running, debug_wb_pc = 0xbfc31b48
+        [ 862000 ns] Test is running, debug_wb_pc = 0xbfc31fa8
+        [ 872000 ns] Test is running, debug_wb_pc = 0xbfc32434
+        [ 882000 ns] Test is running, debug_wb_pc = 0xbfc328a0
+        [ 892000 ns] Test is running, debug_wb_pc = 0xbfc32d08
+        [ 902000 ns] Test is running, debug_wb_pc = 0xbfc33198
+        [ 912000 ns] Test is running, debug_wb_pc = 0xbfc335f8
+        [ 922000 ns] Test is running, debug_wb_pc = 0xbfc33a7c
+----[ 924335 ns] Number 8'd45 Functional Test Point PASS!!!
+        [ 932000 ns] Test is running, debug_wb_pc = 0xbfc2c82c
+        [ 942000 ns] Test is running, debug_wb_pc = 0xbfc2d7cc
+----[ 947915 ns] Number 8'd46 Functional Test Point PASS!!!
+        [ 952000 ns] Test is running, debug_wb_pc = 0xbfc01b24
+        [ 962000 ns] Test is running, debug_wb_pc = 0xbfc02ac4
+----[ 969255 ns] Number 8'd47 Functional Test Point PASS!!!
+        [ 972000 ns] Test is running, debug_wb_pc = 0xbfc45930
+----[ 979975 ns] Number 8'd48 Functional Test Point PASS!!!
+        [ 982000 ns] Test is running, debug_wb_pc = 0xbfc57510
+----[ 990675 ns] Number 8'd49 Functional Test Point PASS!!!
+        [ 992000 ns] Test is running, debug_wb_pc = 0xbfc51b78
+----[1000675 ns] Number 8'd50 Functional Test Point PASS!!!
+        [1002000 ns] Test is running, debug_wb_pc = 0xbfc226f8
+----[1006445 ns] Number 8'd51 Functional Test Point PASS!!!
+        [1012000 ns] Test is running, debug_wb_pc = 0xbfc051fc
+----[1013635 ns] Number 8'd52 Functional Test Point PASS!!!
+----[1021185 ns] Number 8'd53 Functional Test Point PASS!!!
+        [1022000 ns] Test is running, debug_wb_pc = 0xbfc52b54
+----[1028695 ns] Number 8'd54 Functional Test Point PASS!!!
+        [1032000 ns] Test is running, debug_wb_pc = 0xbfc616e4
+----[1036525 ns] Number 8'd55 Functional Test Point PASS!!!
+        [1042000 ns] Test is running, debug_wb_pc = 0xbfc53890
+----[1044445 ns] Number 8'd56 Functional Test Point PASS!!!
+        [1052000 ns] Test is running, debug_wb_pc = 0xbfc6e7f0
+----[1052005 ns] Number 8'd57 Functional Test Point PASS!!!
+----[1056945 ns] Number 8'd58 Functional Test Point PASS!!!
+        [1062000 ns] Test is running, debug_wb_pc = 0x00000000
+        [1072000 ns] Test is running, debug_wb_pc = 0xbfc2fb20
+----[1080905 ns] Number 8'd59 Functional Test Point PASS!!!
+        [1082000 ns] Test is running, debug_wb_pc = 0xbfc674c8
+        [1092000 ns] Test is running, debug_wb_pc = 0xbfc683b8
+        [1102000 ns] Test is running, debug_wb_pc = 0xbfc69318
+----[1106525 ns] Number 8'd60 Functional Test Point PASS!!!
+        [1112000 ns] Test is running, debug_wb_pc = 0xbfc28f30
+        [1122000 ns] Test is running, debug_wb_pc = 0xbfc29e74
+----[1125455 ns] Number 8'd61 Functional Test Point PASS!!!
+        [1132000 ns] Test is running, debug_wb_pc = 0x00000000
+        [1142000 ns] Test is running, debug_wb_pc = 0xbfc43d38
+----[1146755 ns] Number 8'd62 Functional Test Point PASS!!!
+        [1152000 ns] Test is running, debug_wb_pc = 0xbfc6217c
+        [1162000 ns] Test is running, debug_wb_pc = 0xbfc6306c
+        [1172000 ns] Test is running, debug_wb_pc = 0xbfc63f24
+----[1174985 ns] Number 8'd63 Functional Test Point PASS!!!
+        [1182000 ns] Test is running, debug_wb_pc = 0xbfc0dbc8
+        [1192000 ns] Test is running, debug_wb_pc = 0xbfc0eac8
+----[1201565 ns] Number 8'd64 Functional Test Point PASS!!!
+        [1202000 ns] Test is running, debug_wb_pc = 0xbfc423b0
+--------------------------------------------------------------
+[1202017 ns] Error!!!
+    reference: PC = 0xbfc00380, wb_rf_wnum = 0x1a, wb_rf_wdata = 0x00004000
+    mycpu    : PC = 0xbfc424a4, wb_rf_wnum = 0x09, wb_rf_wdata = 0x41000000
+--------------------------------------------------------------
+--------------------------------------------------------------
+[1202035 ns] Error(  0)!!! Occurred in number 8'd65 Functional Test Point!
+--------------------------------------------------------------
+$finish called at time : 1202057 ns : File "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/testbench/mycpu_tb.v" Line 152
+run: Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 1588.453 ; gain = 0.000
+reset_run inst_ram_synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.runs/inst_ram_synth_1
+
+launch_runs synth_1 -jobs 4
+WARNING: [HDL 9-3756] overwriting previous definition of module 'mmu' [D:/yingzong/step_into_mips-lab_4/lab_4/rtl/mmu/mmu.v:1]
+WARNING: [filemgmt 20-1318] Duplicate Design Unit 'mmu()' found in library 'xil_defaultlib'
+Duplicate found at line 1 of file D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mmu.v
+	(Active) Duplicate found at line 1 of file D:/yingzong/step_into_mips-lab_4/lab_4/rtl/mmu/mmu.v
+[Thu Jan  6 22:09:24 2022] Launched inst_ram_synth_1...
+Run output will be captured here: D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.runs/inst_ram_synth_1/runme.log
+[Thu Jan  6 22:09:24 2022] Launched synth_1...
+Run output will be captured here: D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+[Thu Jan  6 22:11:11 2022] Launched impl_1...
+Run output will be captured here: D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+WARNING: [HDL 9-3756] overwriting previous definition of module 'mmu' [D:/yingzong/step_into_mips-lab_4/lab_4/rtl/mmu/mmu.v:1]
+WARNING: [filemgmt 20-1318] Duplicate Design Unit 'mmu()' found in library 'xil_defaultlib'
+Duplicate found at line 1 of file D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mmu.v
+	(Active) Duplicate found at line 1 of file D:/yingzong/step_into_mips-lab_4/lab_4/rtl/mmu/mmu.v
+[Thu Jan  6 22:14:12 2022] Launched synth_1...
+Run output will be captured here: D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+[Thu Jan  6 22:15:35 2022] Launched impl_1...
+Run output will be captured here: D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Jan  6 22:18:50 2022] Launched impl_1...
+Run output will be captured here: D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.runs/impl_1/runme.log
+open_hw_manager
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2021.2
+  **** Build date : Oct 19 2021 at 03:13:30
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2021.2.0
+  ****** Build date   : Sep 28 2021-05:44:20
+    **** Build number : 2021.2.1632779060
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 1588.453 ; gain = 0.000
+disconnect_hw_server: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2976.836 ; gain = 1388.383
+connect_hw_server -url localhost:3121 -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3414] Connected to existing cs_server.
+current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210292747491A]
+set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/210292747491A]
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292747491A
+set_property PROGRAM.FILE {D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.runs/impl_1/soc_lite_top.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.runs/impl_1/soc_lite_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+save_wave_config {D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/12321.wcfg}
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 20084 KB (Peak: 20084 KB), Simulation CPU Usage: 12999 ms
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_top'
+WARNING: [Vivado 12-12986] Compiled library path does not exist: ''
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2021.2/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2021.2/data/xsim/xsim.ini' copied to run dir:'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim/inst_ram.mif'
+INFO: [SIM-utils-43] Exported 'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim/inst_ram.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_top_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/xilinx_ip/clk_pll/clk_pll_sim_netlist.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_pll
+INFO: [VRFC 10-311] analyzing module clk_pll_clk_wiz
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/xilinx_ip/data_ram/data_ram_sim_netlist.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_ram
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_generic_cstr
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_prim_width
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_prim_width__parameterized0
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_prim_width__parameterized1
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_prim_width__parameterized2
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_prim_wrapper
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_prim_wrapper__parameterized0
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_prim_wrapper__parameterized1
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_prim_wrapper__parameterized2
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_top
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_v8_4_5
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_v8_4_5_synth
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/xilinx_ip/inst_ram/sim/inst_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module inst_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/aludec.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aludec
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/BRIDGE/bridge_1x2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bridge_1x2
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/CONFREG/confreg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module confreg
+INFO: [VRFC 10-2458] undeclared symbol conf_we, assumed default net type wire [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/CONFREG/confreg.v:160]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/div.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module div
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/eqcmp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eqcmp
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/flopenrc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module flopenrc
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/flopr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module flopr
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/hazard.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hazard
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/step_into_mips-lab_4/lab_4/rtl/instdec.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module instdec
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/maindec.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module maindec
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/step_into_mips-lab_4/lab_4/rtl/mmu/mmu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mux2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mux3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux3
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/my_mul.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module my_mul
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mycpu
+INFO: [VRFC 10-2458] undeclared symbol rtD, assumed default net type wire [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:62]
+INFO: [VRFC 10-2458] undeclared symbol branchD, assumed default net type wire [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:64]
+INFO: [VRFC 10-2458] undeclared symbol stallE, assumed default net type wire [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:79]
+WARNING: [VRFC 10-2938] 'rtD' is already implicitly declared on line 62 [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:105]
+WARNING: [VRFC 10-2938] 'stallE' is already implicitly declared on line 79 [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:119]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.srcs/sources_1/new/mycpu_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mycpu_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/pc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/read_data_handle.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module read_data_handle
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/regfile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/signext.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module signext
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/sl2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sl2
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/soc_lite_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module soc_lite_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/write_data_handle.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module write_data_handle
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/testbench/mycpu_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'glbl' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim/glbl.v:6]
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_5 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2021.2
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2021.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_5 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 1 for port 'int' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/soc_lite_top.v:142]
+WARNING: [VRFC 10-3091] actual bit length 3 differs from formal bit length 8 for port 'd' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:88]
+WARNING: [VRFC 10-3091] actual bit length 3 differs from formal bit length 8 for port 'q' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:89]
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 8 for port 'd' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:93]
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 8 for port 'q' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:94]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'wea' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/soc_lite_top.v:168]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.instdec
+Compiling module xil_defaultlib.maindec
+Compiling module xil_defaultlib.aludec
+Compiling module xil_defaultlib.flopenrc(WIDTH=13)
+Compiling module xil_defaultlib.flopenrc(WIDTH=1)
+Compiling module xil_defaultlib.flopr
+Compiling module xil_defaultlib.hazard
+Compiling module xil_defaultlib.mux2(WIDTH=32)
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.pc(WIDTH=32)
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.flopenrc(WIDTH=32)
+Compiling module xil_defaultlib.signext
+Compiling module xil_defaultlib.sl2
+Compiling module xil_defaultlib.eqcmp
+Compiling module xil_defaultlib.flopenrc(WIDTH=5)
+Compiling module xil_defaultlib.mux3(WIDTH=32)
+Compiling module xil_defaultlib.my_mul
+Compiling module xil_defaultlib.div
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.mux2(WIDTH=5)
+Compiling module xil_defaultlib.write_data_handle
+Compiling module xil_defaultlib.flopr(WIDTH=32)
+Compiling module xil_defaultlib.flopr(WIDTH=5)
+Compiling module xil_defaultlib.flopr(WIDTH=4)
+Compiling module xil_defaultlib.read_data_handle
+Compiling module xil_defaultlib.mycpu
+Compiling module xil_defaultlib.mmu
+Compiling module xil_defaultlib.mycpu_top
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="art...
+Compiling module xil_defaultlib.inst_ram
+Compiling module xil_defaultlib.bridge_1x2
+Compiling module unisims_ver.GND
+Compiling module unisims_ver.RB36_INTERNAL_VLOG(RDADDR_COLLIS...
+Compiling module unisims_ver.RAMB36E1(RDADDR_COLLISION_HWCONF...
+Compiling module xil_defaultlib.data_ram
+Compiling module xil_defaultlib.confreg(SIMULATION=1'b1)
+Compiling module xil_defaultlib.soc_lite_top(SIMULATION=1'b1)
+Compiling module xil_defaultlib.tb_top
+WARNING: [XSIM 43-3373] "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/testbench/mycpu_tb.v" Line 123. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_top_behav
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 3021.160 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '9' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_top_behav -key {Behavioral:sim_1:Functional:tb_top} -tclbatch {tb_top.tcl} -view {D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/12321.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/12321.wcfg
+source tb_top.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.soc_lite.inst_ram.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_top_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:15 . Memory (MB): peak = 3039.758 ; gain = 18.598
+run all
+==============================================================
+Test begin!
+----[   7675 ns] Number 8'd01 Functional Test Point PASS!!!
+----[  17835 ns] Number 8'd02 Functional Test Point PASS!!!
+        [  22000 ns] Test is running, debug_wb_pc = 0xbfc6fe14
+----[  27985 ns] Number 8'd03 Functional Test Point PASS!!!
+        [  32000 ns] Test is running, debug_wb_pc = 0xbfc4a9b4
+----[  36975 ns] Number 8'd04 Functional Test Point PASS!!!
+        [  42000 ns] Test is running, debug_wb_pc = 0xbfc21024
+----[  51665 ns] Number 8'd05 Functional Test Point PASS!!!
+        [  52000 ns] Test is running, debug_wb_pc = 0xbfc35d68
+        [  62000 ns] Test is running, debug_wb_pc = 0xbfc36d08
+----[  64745 ns] Number 8'd06 Functional Test Point PASS!!!
+        [  72000 ns] Test is running, debug_wb_pc = 0xbfc54720
+----[  80695 ns] Number 8'd07 Functional Test Point PASS!!!
+        [  82000 ns] Test is running, debug_wb_pc = 0xbfc557b0
+        [  92000 ns] Test is running, debug_wb_pc = 0xbfc56578
+----[  94825 ns] Number 8'd08 Functional Test Point PASS!!!
+        [ 102000 ns] Test is running, debug_wb_pc = 0xbfc35740
+----[ 106605 ns] Number 8'd09 Functional Test Point PASS!!!
+        [ 112000 ns] Test is running, debug_wb_pc = 0xbfc344e0
+----[ 118875 ns] Number 8'd10 Functional Test Point PASS!!!
+        [ 122000 ns] Test is running, debug_wb_pc = 0x00000000
+----[ 131615 ns] Number 8'd11 Functional Test Point PASS!!!
+        [ 132000 ns] Test is running, debug_wb_pc = 0xbfc0364c
+        [ 142000 ns] Test is running, debug_wb_pc = 0xbfc045ec
+----[ 146285 ns] Number 8'd12 Functional Test Point PASS!!!
+        [ 152000 ns] Test is running, debug_wb_pc = 0xbfc37f58
+        [ 162000 ns] Test is running, debug_wb_pc = 0xbfc393a8
+----[ 170875 ns] Number 8'd13 Functional Test Point PASS!!!
+        [ 172000 ns] Test is running, debug_wb_pc = 0xbfc3db9c
+        [ 182000 ns] Test is running, debug_wb_pc = 0xbfc3ee9c
+        [ 192000 ns] Test is running, debug_wb_pc = 0xbfc401a4
+        [ 202000 ns] Test is running, debug_wb_pc = 0xbfc41484
+----[ 205425 ns] Number 8'd14 Functional Test Point PASS!!!
+        [ 212000 ns] Test is running, debug_wb_pc = 0xbfc6a58c
+        [ 222000 ns] Test is running, debug_wb_pc = 0xbfc6b84c
+        [ 232000 ns] Test is running, debug_wb_pc = 0xbfc6cb0c
+----[ 241315 ns] Number 8'd15 Functional Test Point PASS!!!
+        [ 242000 ns] Test is running, debug_wb_pc = 0xbfc5f7a0
+----[ 245085 ns] Number 8'd16 Functional Test Point PASS!!!
+----[ 249115 ns] Number 8'd17 Functional Test Point PASS!!!
+----[ 251065 ns] Number 8'd18 Functional Test Point PASS!!!
+        [ 252000 ns] Test is running, debug_wb_pc = 0xbfc2e250
+----[ 253285 ns] Number 8'd19 Functional Test Point PASS!!!
+----[ 255755 ns] Number 8'd20 Functional Test Point PASS!!!
+        [ 262000 ns] Test is running, debug_wb_pc = 0xbfc64bc8
+----[ 271615 ns] Number 8'd21 Functional Test Point PASS!!!
+        [ 272000 ns] Test is running, debug_wb_pc = 0x00000000
+        [ 282000 ns] Test is running, debug_wb_pc = 0xbfc09b3c
+----[ 284585 ns] Number 8'd22 Functional Test Point PASS!!!
+        [ 292000 ns] Test is running, debug_wb_pc = 0xbfc2b09c
+----[ 300635 ns] Number 8'd23 Functional Test Point PASS!!!
+        [ 302000 ns] Test is running, debug_wb_pc = 0xbfc0a02c
+        [ 312000 ns] Test is running, debug_wb_pc = 0xbfc0ae2c
+----[ 317895 ns] Number 8'd24 Functional Test Point PASS!!!
+        [ 322000 ns] Test is running, debug_wb_pc = 0xbfc06a94
+        [ 332000 ns] Test is running, debug_wb_pc = 0xbfc07850
+----[ 333015 ns] Number 8'd25 Functional Test Point PASS!!!
+        [ 342000 ns] Test is running, debug_wb_pc = 0xbfc45358
+----[ 342175 ns] Number 8'd26 Functional Test Point PASS!!!
+----[ 349415 ns] Number 8'd27 Functional Test Point PASS!!!
+        [ 352000 ns] Test is running, debug_wb_pc = 0xbfc70984
+----[ 360405 ns] Number 8'd28 Functional Test Point PASS!!!
+        [ 362000 ns] Test is running, debug_wb_pc = 0xbfc5ecd0
+----[ 369535 ns] Number 8'd29 Functional Test Point PASS!!!
+        [ 372000 ns] Test is running, debug_wb_pc = 0xbfc3c678
+        [ 382000 ns] Test is running, debug_wb_pc = 0xbfc3d470
+----[ 385995 ns] Number 8'd30 Functional Test Point PASS!!!
+        [ 392000 ns] Test is running, debug_wb_pc = 0xbfc08188
+----[ 398645 ns] Number 8'd31 Functional Test Point PASS!!!
+        [ 402000 ns] Test is running, debug_wb_pc = 0xbfc5da30
+        [ 412000 ns] Test is running, debug_wb_pc = 0xbfc5e7f4
+----[ 414245 ns] Number 8'd32 Functional Test Point PASS!!!
+        [ 422000 ns] Test is running, debug_wb_pc = 0xbfc60638
+----[ 427905 ns] Number 8'd33 Functional Test Point PASS!!!
+        [ 432000 ns] Test is running, debug_wb_pc = 0xbfc0c1a8
+----[ 441695 ns] Number 8'd34 Functional Test Point PASS!!!
+        [ 442000 ns] Test is running, debug_wb_pc = 0xbfc00938
+        [ 452000 ns] Test is running, debug_wb_pc = 0xbfc060e4
+----[ 455315 ns] Number 8'd35 Functional Test Point PASS!!!
+        [ 462000 ns] Test is running, debug_wb_pc = 0xbfc66708
+----[ 471155 ns] Number 8'd36 Functional Test Point PASS!!!
+        [ 472000 ns] Test is running, debug_wb_pc = 0xbfc4b5c4
+        [ 482000 ns] Test is running, debug_wb_pc = 0xbfc4ca50
+        [ 492000 ns] Test is running, debug_wb_pc = 0xbfc4def8
+        [ 502000 ns] Test is running, debug_wb_pc = 0x00000000
+        [ 512000 ns] Test is running, debug_wb_pc = 0xbfc50858
+----[ 512465 ns] Number 8'd37 Functional Test Point PASS!!!
+        [ 522000 ns] Test is running, debug_wb_pc = 0xbfc1c414
+        [ 532000 ns] Test is running, debug_wb_pc = 0xbfc1d8f0
+        [ 542000 ns] Test is running, debug_wb_pc = 0xbfc1ed6c
+        [ 552000 ns] Test is running, debug_wb_pc = 0xbfc2025c
+----[ 553575 ns] Number 8'd38 Functional Test Point PASS!!!
+        [ 562000 ns] Test is running, debug_wb_pc = 0xbfc5922c
+        [ 572000 ns] Test is running, debug_wb_pc = 0xbfc5a6a4
+        [ 582000 ns] Test is running, debug_wb_pc = 0xbfc5bb50
+        [ 592000 ns] Test is running, debug_wb_pc = 0xbfc5d020
+----[ 594885 ns] Number 8'd39 Functional Test Point PASS!!!
+        [ 602000 ns] Test is running, debug_wb_pc = 0xbfc47348
+        [ 612000 ns] Test is running, debug_wb_pc = 0xbfc4865c
+        [ 622000 ns] Test is running, debug_wb_pc = 0xbfc4997c
+----[ 626855 ns] Number 8'd40 Functional Test Point PASS!!!
+        [ 632000 ns] Test is running, debug_wb_pc = 0xbfc23910
+        [ 642000 ns] Test is running, debug_wb_pc = 0xbfc24ba8
+        [ 652000 ns] Test is running, debug_wb_pc = 0xbfc25e18
+        [ 662000 ns] Test is running, debug_wb_pc = 0xbfc270c4
+        [ 672000 ns] Test is running, debug_wb_pc = 0xbfc283ac
+----[ 673925 ns] Number 8'd41 Functional Test Point PASS!!!
+        [ 682000 ns] Test is running, debug_wb_pc = 0xbfc1646c
+        [ 692000 ns] Test is running, debug_wb_pc = 0xbfc1773c
+        [ 702000 ns] Test is running, debug_wb_pc = 0xbfc189e8
+        [ 712000 ns] Test is running, debug_wb_pc = 0xbfc19c4c
+        [ 722000 ns] Test is running, debug_wb_pc = 0xbfc1aef0
+----[ 723165 ns] Number 8'd42 Functional Test Point PASS!!!
+        [ 732000 ns] Test is running, debug_wb_pc = 0xbfc106c4
+        [ 742000 ns] Test is running, debug_wb_pc = 0xbfc1174c
+        [ 752000 ns] Test is running, debug_wb_pc = 0xbfc127b8
+        [ 762000 ns] Test is running, debug_wb_pc = 0xbfc1381c
+        [ 772000 ns] Test is running, debug_wb_pc = 0xbfc148a4
+----[ 776755 ns] Number 8'd43 Functional Test Point PASS!!!
+        [ 782000 ns] Test is running, debug_wb_pc = 0xbfc3aaec
+        [ 792000 ns] Test is running, debug_wb_pc = 0xbfc3af58
+        [ 802000 ns] Test is running, debug_wb_pc = 0xbfc3b3c0
+        [ 812000 ns] Test is running, debug_wb_pc = 0xbfc3b850
+        [ 822000 ns] Test is running, debug_wb_pc = 0xbfc3bcb0
+        [ 832000 ns] Test is running, debug_wb_pc = 0xbfc3c144
+----[ 836865 ns] Number 8'd44 Functional Test Point PASS!!!
+        [ 842000 ns] Test is running, debug_wb_pc = 0xbfc316b0
+        [ 852000 ns] Test is running, debug_wb_pc = 0xbfc31b48
+        [ 862000 ns] Test is running, debug_wb_pc = 0xbfc31fa8
+        [ 872000 ns] Test is running, debug_wb_pc = 0xbfc32434
+        [ 882000 ns] Test is running, debug_wb_pc = 0xbfc328a0
+        [ 892000 ns] Test is running, debug_wb_pc = 0xbfc32d08
+        [ 902000 ns] Test is running, debug_wb_pc = 0xbfc33198
+        [ 912000 ns] Test is running, debug_wb_pc = 0xbfc335f8
+        [ 922000 ns] Test is running, debug_wb_pc = 0xbfc33a7c
+----[ 924335 ns] Number 8'd45 Functional Test Point PASS!!!
+        [ 932000 ns] Test is running, debug_wb_pc = 0xbfc2c82c
+        [ 942000 ns] Test is running, debug_wb_pc = 0xbfc2d7cc
+----[ 947915 ns] Number 8'd46 Functional Test Point PASS!!!
+        [ 952000 ns] Test is running, debug_wb_pc = 0xbfc01b24
+        [ 962000 ns] Test is running, debug_wb_pc = 0xbfc02ac4
+----[ 969255 ns] Number 8'd47 Functional Test Point PASS!!!
+        [ 972000 ns] Test is running, debug_wb_pc = 0xbfc45930
+----[ 979975 ns] Number 8'd48 Functional Test Point PASS!!!
+        [ 982000 ns] Test is running, debug_wb_pc = 0xbfc57510
+----[ 990675 ns] Number 8'd49 Functional Test Point PASS!!!
+        [ 992000 ns] Test is running, debug_wb_pc = 0xbfc51b78
+----[1000675 ns] Number 8'd50 Functional Test Point PASS!!!
+        [1002000 ns] Test is running, debug_wb_pc = 0xbfc226f8
+----[1006445 ns] Number 8'd51 Functional Test Point PASS!!!
+        [1012000 ns] Test is running, debug_wb_pc = 0xbfc051fc
+----[1013635 ns] Number 8'd52 Functional Test Point PASS!!!
+----[1021185 ns] Number 8'd53 Functional Test Point PASS!!!
+        [1022000 ns] Test is running, debug_wb_pc = 0xbfc52b54
+----[1028695 ns] Number 8'd54 Functional Test Point PASS!!!
+        [1032000 ns] Test is running, debug_wb_pc = 0xbfc616e4
+----[1036525 ns] Number 8'd55 Functional Test Point PASS!!!
+        [1042000 ns] Test is running, debug_wb_pc = 0xbfc53890
+----[1044445 ns] Number 8'd56 Functional Test Point PASS!!!
+        [1052000 ns] Test is running, debug_wb_pc = 0xbfc6e7f0
+----[1052005 ns] Number 8'd57 Functional Test Point PASS!!!
+----[1056945 ns] Number 8'd58 Functional Test Point PASS!!!
+        [1062000 ns] Test is running, debug_wb_pc = 0x00000000
+        [1072000 ns] Test is running, debug_wb_pc = 0xbfc2fb20
+----[1080905 ns] Number 8'd59 Functional Test Point PASS!!!
+        [1082000 ns] Test is running, debug_wb_pc = 0xbfc674c8
+        [1092000 ns] Test is running, debug_wb_pc = 0xbfc683b8
+        [1102000 ns] Test is running, debug_wb_pc = 0xbfc69318
+----[1106525 ns] Number 8'd60 Functional Test Point PASS!!!
+        [1112000 ns] Test is running, debug_wb_pc = 0xbfc28f30
+        [1122000 ns] Test is running, debug_wb_pc = 0xbfc29e74
+----[1125455 ns] Number 8'd61 Functional Test Point PASS!!!
+        [1132000 ns] Test is running, debug_wb_pc = 0x00000000
+        [1142000 ns] Test is running, debug_wb_pc = 0xbfc43d38
+----[1146755 ns] Number 8'd62 Functional Test Point PASS!!!
+        [1152000 ns] Test is running, debug_wb_pc = 0xbfc6217c
+        [1162000 ns] Test is running, debug_wb_pc = 0xbfc6306c
+        [1172000 ns] Test is running, debug_wb_pc = 0xbfc63f24
+----[1174985 ns] Number 8'd63 Functional Test Point PASS!!!
+        [1182000 ns] Test is running, debug_wb_pc = 0xbfc0dbc8
+        [1192000 ns] Test is running, debug_wb_pc = 0xbfc0eac8
+----[1201565 ns] Number 8'd64 Functional Test Point PASS!!!
+        [1202000 ns] Test is running, debug_wb_pc = 0xbfc423b0
+--------------------------------------------------------------
+[1202017 ns] Error!!!
+    reference: PC = 0xbfc00380, wb_rf_wnum = 0x1a, wb_rf_wdata = 0x00004000
+    mycpu    : PC = 0xbfc424a4, wb_rf_wnum = 0x09, wb_rf_wdata = 0x41000000
+--------------------------------------------------------------
+--------------------------------------------------------------
+[1202035 ns] Error(  0)!!! Occurred in number 8'd65 Functional Test Point!
+--------------------------------------------------------------
+$finish called at time : 1202057 ns : File "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/testbench/mycpu_tb.v" Line 152
+run: Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 3040.637 ; gain = 0.879
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 19908 KB (Peak: 19908 KB), Simulation CPU Usage: 11921 ms
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_top'
+WARNING: [Vivado 12-12986] Compiled library path does not exist: ''
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2021.2/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2021.2/data/xsim/xsim.ini' copied to run dir:'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim/inst_ram.mif'
+INFO: [SIM-utils-43] Exported 'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim/inst_ram.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_top_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/xilinx_ip/clk_pll/clk_pll_sim_netlist.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_pll
+INFO: [VRFC 10-311] analyzing module clk_pll_clk_wiz
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/xilinx_ip/data_ram/data_ram_sim_netlist.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_ram
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_generic_cstr
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_prim_width
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_prim_width__parameterized0
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_prim_width__parameterized1
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_prim_width__parameterized2
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_prim_wrapper
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_prim_wrapper__parameterized0
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_prim_wrapper__parameterized1
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_prim_wrapper__parameterized2
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_top
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_v8_4_5
+INFO: [VRFC 10-311] analyzing module data_ram_blk_mem_gen_v8_4_5_synth
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/xilinx_ip/inst_ram/sim/inst_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module inst_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/aludec.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aludec
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/BRIDGE/bridge_1x2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bridge_1x2
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/CONFREG/confreg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module confreg
+INFO: [VRFC 10-2458] undeclared symbol conf_we, assumed default net type wire [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/CONFREG/confreg.v:160]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/div.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module div
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/eqcmp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eqcmp
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/flopenrc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module flopenrc
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/flopr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module flopr
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/hazard.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hazard
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/step_into_mips-lab_4/lab_4/rtl/instdec.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module instdec
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/maindec.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module maindec
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/step_into_mips-lab_4/lab_4/rtl/mmu/mmu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mux2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mux3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux3
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/my_mul.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module my_mul
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mycpu
+INFO: [VRFC 10-2458] undeclared symbol rtD, assumed default net type wire [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:62]
+INFO: [VRFC 10-2458] undeclared symbol branchD, assumed default net type wire [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:64]
+INFO: [VRFC 10-2458] undeclared symbol stallE, assumed default net type wire [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:79]
+WARNING: [VRFC 10-2938] 'rtD' is already implicitly declared on line 62 [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:105]
+WARNING: [VRFC 10-2938] 'stallE' is already implicitly declared on line 79 [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:119]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.srcs/sources_1/new/mycpu_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mycpu_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/pc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/read_data_handle.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module read_data_handle
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/regfile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/signext.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module signext
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/sl2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sl2
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/soc_lite_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module soc_lite_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/write_data_handle.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module write_data_handle
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/testbench/mycpu_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_top
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_5 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2021.2
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2021.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_5 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 1 for port 'int' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/soc_lite_top.v:142]
+WARNING: [VRFC 10-3091] actual bit length 3 differs from formal bit length 8 for port 'd' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:88]
+WARNING: [VRFC 10-3091] actual bit length 3 differs from formal bit length 8 for port 'q' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:89]
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 8 for port 'd' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:93]
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 8 for port 'q' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/mycpu.v:94]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'wea' [D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/rtl/soc_lite_top.v:168]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.instdec
+Compiling module xil_defaultlib.maindec
+Compiling module xil_defaultlib.aludec
+Compiling module xil_defaultlib.flopenrc(WIDTH=13)
+Compiling module xil_defaultlib.flopenrc(WIDTH=1)
+Compiling module xil_defaultlib.flopr
+Compiling module xil_defaultlib.hazard
+Compiling module xil_defaultlib.mux2(WIDTH=32)
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.pc(WIDTH=32)
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.flopenrc(WIDTH=32)
+Compiling module xil_defaultlib.signext
+Compiling module xil_defaultlib.sl2
+Compiling module xil_defaultlib.eqcmp
+Compiling module xil_defaultlib.flopenrc(WIDTH=5)
+Compiling module xil_defaultlib.mux3(WIDTH=32)
+Compiling module xil_defaultlib.my_mul
+Compiling module xil_defaultlib.div
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.mux2(WIDTH=5)
+Compiling module xil_defaultlib.write_data_handle
+Compiling module xil_defaultlib.flopr(WIDTH=32)
+Compiling module xil_defaultlib.flopr(WIDTH=5)
+Compiling module xil_defaultlib.flopr(WIDTH=4)
+Compiling module xil_defaultlib.read_data_handle
+Compiling module xil_defaultlib.mycpu
+Compiling module xil_defaultlib.mmu
+Compiling module xil_defaultlib.mycpu_top
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="art...
+Compiling module xil_defaultlib.inst_ram
+Compiling module xil_defaultlib.bridge_1x2
+Compiling module unisims_ver.GND
+Compiling module unisims_ver.RB36_INTERNAL_VLOG(RDADDR_COLLIS...
+Compiling module unisims_ver.RAMB36E1(RDADDR_COLLISION_HWCONF...
+Compiling module xil_defaultlib.data_ram
+Compiling module xil_defaultlib.confreg(SIMULATION=1'b1)
+Compiling module xil_defaultlib.soc_lite_top(SIMULATION=1'b1)
+Compiling module xil_defaultlib.tb_top
+WARNING: [XSIM 43-3373] "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/testbench/mycpu_tb.v" Line 123. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_top_behav
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 3051.117 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_top_behav -key {Behavioral:sim_1:Functional:tb_top} -tclbatch {tb_top.tcl} -view {D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/12321.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/run_vivado/project_1/12321.wcfg
+source tb_top.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.soc_lite.inst_ram.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_top_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:15 . Memory (MB): peak = 3068.273 ; gain = 17.156
+run all
+==============================================================
+Test begin!
+----[   7675 ns] Number 8'd01 Functional Test Point PASS!!!
+----[  17835 ns] Number 8'd02 Functional Test Point PASS!!!
+        [  22000 ns] Test is running, debug_wb_pc = 0xbfc6fe14
+----[  27985 ns] Number 8'd03 Functional Test Point PASS!!!
+        [  32000 ns] Test is running, debug_wb_pc = 0xbfc4a9b4
+----[  36975 ns] Number 8'd04 Functional Test Point PASS!!!
+        [  42000 ns] Test is running, debug_wb_pc = 0xbfc21024
+----[  51665 ns] Number 8'd05 Functional Test Point PASS!!!
+        [  52000 ns] Test is running, debug_wb_pc = 0xbfc35d68
+        [  62000 ns] Test is running, debug_wb_pc = 0xbfc36d08
+----[  64745 ns] Number 8'd06 Functional Test Point PASS!!!
+        [  72000 ns] Test is running, debug_wb_pc = 0xbfc54720
+----[  80695 ns] Number 8'd07 Functional Test Point PASS!!!
+        [  82000 ns] Test is running, debug_wb_pc = 0xbfc557b0
+        [  92000 ns] Test is running, debug_wb_pc = 0xbfc56578
+----[  94825 ns] Number 8'd08 Functional Test Point PASS!!!
+        [ 102000 ns] Test is running, debug_wb_pc = 0xbfc35740
+----[ 106605 ns] Number 8'd09 Functional Test Point PASS!!!
+        [ 112000 ns] Test is running, debug_wb_pc = 0xbfc344e0
+----[ 118875 ns] Number 8'd10 Functional Test Point PASS!!!
+        [ 122000 ns] Test is running, debug_wb_pc = 0x00000000
+----[ 131615 ns] Number 8'd11 Functional Test Point PASS!!!
+        [ 132000 ns] Test is running, debug_wb_pc = 0xbfc0364c
+        [ 142000 ns] Test is running, debug_wb_pc = 0xbfc045ec
+----[ 146285 ns] Number 8'd12 Functional Test Point PASS!!!
+        [ 152000 ns] Test is running, debug_wb_pc = 0xbfc37f58
+        [ 162000 ns] Test is running, debug_wb_pc = 0xbfc393a8
+----[ 170875 ns] Number 8'd13 Functional Test Point PASS!!!
+        [ 172000 ns] Test is running, debug_wb_pc = 0xbfc3db9c
+        [ 182000 ns] Test is running, debug_wb_pc = 0xbfc3ee9c
+        [ 192000 ns] Test is running, debug_wb_pc = 0xbfc401a4
+        [ 202000 ns] Test is running, debug_wb_pc = 0xbfc41484
+----[ 205425 ns] Number 8'd14 Functional Test Point PASS!!!
+        [ 212000 ns] Test is running, debug_wb_pc = 0xbfc6a58c
+        [ 222000 ns] Test is running, debug_wb_pc = 0xbfc6b84c
+        [ 232000 ns] Test is running, debug_wb_pc = 0xbfc6cb0c
+----[ 241315 ns] Number 8'd15 Functional Test Point PASS!!!
+        [ 242000 ns] Test is running, debug_wb_pc = 0xbfc5f7a0
+----[ 245085 ns] Number 8'd16 Functional Test Point PASS!!!
+----[ 249115 ns] Number 8'd17 Functional Test Point PASS!!!
+----[ 251065 ns] Number 8'd18 Functional Test Point PASS!!!
+        [ 252000 ns] Test is running, debug_wb_pc = 0xbfc2e250
+----[ 253285 ns] Number 8'd19 Functional Test Point PASS!!!
+----[ 255755 ns] Number 8'd20 Functional Test Point PASS!!!
+        [ 262000 ns] Test is running, debug_wb_pc = 0xbfc64bc8
+----[ 271615 ns] Number 8'd21 Functional Test Point PASS!!!
+        [ 272000 ns] Test is running, debug_wb_pc = 0x00000000
+        [ 282000 ns] Test is running, debug_wb_pc = 0xbfc09b3c
+----[ 284585 ns] Number 8'd22 Functional Test Point PASS!!!
+        [ 292000 ns] Test is running, debug_wb_pc = 0xbfc2b09c
+----[ 300635 ns] Number 8'd23 Functional Test Point PASS!!!
+        [ 302000 ns] Test is running, debug_wb_pc = 0xbfc0a02c
+        [ 312000 ns] Test is running, debug_wb_pc = 0xbfc0ae2c
+----[ 317895 ns] Number 8'd24 Functional Test Point PASS!!!
+        [ 322000 ns] Test is running, debug_wb_pc = 0xbfc06a94
+        [ 332000 ns] Test is running, debug_wb_pc = 0xbfc07850
+----[ 333015 ns] Number 8'd25 Functional Test Point PASS!!!
+        [ 342000 ns] Test is running, debug_wb_pc = 0xbfc45358
+----[ 342175 ns] Number 8'd26 Functional Test Point PASS!!!
+----[ 349415 ns] Number 8'd27 Functional Test Point PASS!!!
+        [ 352000 ns] Test is running, debug_wb_pc = 0xbfc70984
+----[ 360405 ns] Number 8'd28 Functional Test Point PASS!!!
+        [ 362000 ns] Test is running, debug_wb_pc = 0xbfc5ecd0
+----[ 369535 ns] Number 8'd29 Functional Test Point PASS!!!
+        [ 372000 ns] Test is running, debug_wb_pc = 0xbfc3c678
+        [ 382000 ns] Test is running, debug_wb_pc = 0xbfc3d470
+----[ 385995 ns] Number 8'd30 Functional Test Point PASS!!!
+        [ 392000 ns] Test is running, debug_wb_pc = 0xbfc08188
+----[ 398645 ns] Number 8'd31 Functional Test Point PASS!!!
+        [ 402000 ns] Test is running, debug_wb_pc = 0xbfc5da30
+        [ 412000 ns] Test is running, debug_wb_pc = 0xbfc5e7f4
+----[ 414245 ns] Number 8'd32 Functional Test Point PASS!!!
+        [ 422000 ns] Test is running, debug_wb_pc = 0xbfc60638
+----[ 427905 ns] Number 8'd33 Functional Test Point PASS!!!
+        [ 432000 ns] Test is running, debug_wb_pc = 0xbfc0c1a8
+----[ 441695 ns] Number 8'd34 Functional Test Point PASS!!!
+        [ 442000 ns] Test is running, debug_wb_pc = 0xbfc00938
+        [ 452000 ns] Test is running, debug_wb_pc = 0xbfc060e4
+----[ 455315 ns] Number 8'd35 Functional Test Point PASS!!!
+        [ 462000 ns] Test is running, debug_wb_pc = 0xbfc66708
+----[ 471155 ns] Number 8'd36 Functional Test Point PASS!!!
+        [ 472000 ns] Test is running, debug_wb_pc = 0xbfc4b5c4
+        [ 482000 ns] Test is running, debug_wb_pc = 0xbfc4ca50
+        [ 492000 ns] Test is running, debug_wb_pc = 0xbfc4def8
+        [ 502000 ns] Test is running, debug_wb_pc = 0x00000000
+        [ 512000 ns] Test is running, debug_wb_pc = 0xbfc50858
+----[ 512465 ns] Number 8'd37 Functional Test Point PASS!!!
+        [ 522000 ns] Test is running, debug_wb_pc = 0xbfc1c414
+        [ 532000 ns] Test is running, debug_wb_pc = 0xbfc1d8f0
+        [ 542000 ns] Test is running, debug_wb_pc = 0xbfc1ed6c
+        [ 552000 ns] Test is running, debug_wb_pc = 0xbfc2025c
+----[ 553575 ns] Number 8'd38 Functional Test Point PASS!!!
+        [ 562000 ns] Test is running, debug_wb_pc = 0xbfc5922c
+        [ 572000 ns] Test is running, debug_wb_pc = 0xbfc5a6a4
+        [ 582000 ns] Test is running, debug_wb_pc = 0xbfc5bb50
+        [ 592000 ns] Test is running, debug_wb_pc = 0xbfc5d020
+----[ 594885 ns] Number 8'd39 Functional Test Point PASS!!!
+        [ 602000 ns] Test is running, debug_wb_pc = 0xbfc47348
+        [ 612000 ns] Test is running, debug_wb_pc = 0xbfc4865c
+        [ 622000 ns] Test is running, debug_wb_pc = 0xbfc4997c
+----[ 626855 ns] Number 8'd40 Functional Test Point PASS!!!
+        [ 632000 ns] Test is running, debug_wb_pc = 0xbfc23910
+        [ 642000 ns] Test is running, debug_wb_pc = 0xbfc24ba8
+        [ 652000 ns] Test is running, debug_wb_pc = 0xbfc25e18
+        [ 662000 ns] Test is running, debug_wb_pc = 0xbfc270c4
+        [ 672000 ns] Test is running, debug_wb_pc = 0xbfc283ac
+----[ 673925 ns] Number 8'd41 Functional Test Point PASS!!!
+        [ 682000 ns] Test is running, debug_wb_pc = 0xbfc1646c
+        [ 692000 ns] Test is running, debug_wb_pc = 0xbfc1773c
+        [ 702000 ns] Test is running, debug_wb_pc = 0xbfc189e8
+        [ 712000 ns] Test is running, debug_wb_pc = 0xbfc19c4c
+        [ 722000 ns] Test is running, debug_wb_pc = 0xbfc1aef0
+----[ 723165 ns] Number 8'd42 Functional Test Point PASS!!!
+        [ 732000 ns] Test is running, debug_wb_pc = 0xbfc106c4
+        [ 742000 ns] Test is running, debug_wb_pc = 0xbfc1174c
+        [ 752000 ns] Test is running, debug_wb_pc = 0xbfc127b8
+        [ 762000 ns] Test is running, debug_wb_pc = 0xbfc1381c
+        [ 772000 ns] Test is running, debug_wb_pc = 0xbfc148a4
+----[ 776755 ns] Number 8'd43 Functional Test Point PASS!!!
+        [ 782000 ns] Test is running, debug_wb_pc = 0xbfc3aaec
+        [ 792000 ns] Test is running, debug_wb_pc = 0xbfc3af58
+        [ 802000 ns] Test is running, debug_wb_pc = 0xbfc3b3c0
+        [ 812000 ns] Test is running, debug_wb_pc = 0xbfc3b850
+        [ 822000 ns] Test is running, debug_wb_pc = 0xbfc3bcb0
+        [ 832000 ns] Test is running, debug_wb_pc = 0xbfc3c144
+----[ 836865 ns] Number 8'd44 Functional Test Point PASS!!!
+        [ 842000 ns] Test is running, debug_wb_pc = 0xbfc316b0
+        [ 852000 ns] Test is running, debug_wb_pc = 0xbfc31b48
+        [ 862000 ns] Test is running, debug_wb_pc = 0xbfc31fa8
+        [ 872000 ns] Test is running, debug_wb_pc = 0xbfc32434
+        [ 882000 ns] Test is running, debug_wb_pc = 0xbfc328a0
+        [ 892000 ns] Test is running, debug_wb_pc = 0xbfc32d08
+        [ 902000 ns] Test is running, debug_wb_pc = 0xbfc33198
+        [ 912000 ns] Test is running, debug_wb_pc = 0xbfc335f8
+        [ 922000 ns] Test is running, debug_wb_pc = 0xbfc33a7c
+----[ 924335 ns] Number 8'd45 Functional Test Point PASS!!!
+        [ 932000 ns] Test is running, debug_wb_pc = 0xbfc2c82c
+        [ 942000 ns] Test is running, debug_wb_pc = 0xbfc2d7cc
+----[ 947915 ns] Number 8'd46 Functional Test Point PASS!!!
+        [ 952000 ns] Test is running, debug_wb_pc = 0xbfc01b24
+        [ 962000 ns] Test is running, debug_wb_pc = 0xbfc02ac4
+----[ 969255 ns] Number 8'd47 Functional Test Point PASS!!!
+        [ 972000 ns] Test is running, debug_wb_pc = 0xbfc45930
+----[ 979975 ns] Number 8'd48 Functional Test Point PASS!!!
+        [ 982000 ns] Test is running, debug_wb_pc = 0xbfc57510
+----[ 990675 ns] Number 8'd49 Functional Test Point PASS!!!
+        [ 992000 ns] Test is running, debug_wb_pc = 0xbfc51b78
+----[1000675 ns] Number 8'd50 Functional Test Point PASS!!!
+        [1002000 ns] Test is running, debug_wb_pc = 0xbfc226f8
+----[1006445 ns] Number 8'd51 Functional Test Point PASS!!!
+        [1012000 ns] Test is running, debug_wb_pc = 0xbfc051fc
+----[1013635 ns] Number 8'd52 Functional Test Point PASS!!!
+----[1021185 ns] Number 8'd53 Functional Test Point PASS!!!
+        [1022000 ns] Test is running, debug_wb_pc = 0xbfc52b54
+----[1028695 ns] Number 8'd54 Functional Test Point PASS!!!
+        [1032000 ns] Test is running, debug_wb_pc = 0xbfc616e4
+----[1036525 ns] Number 8'd55 Functional Test Point PASS!!!
+        [1042000 ns] Test is running, debug_wb_pc = 0xbfc53890
+----[1044445 ns] Number 8'd56 Functional Test Point PASS!!!
+        [1052000 ns] Test is running, debug_wb_pc = 0xbfc6e7f0
+----[1052005 ns] Number 8'd57 Functional Test Point PASS!!!
+----[1056945 ns] Number 8'd58 Functional Test Point PASS!!!
+        [1062000 ns] Test is running, debug_wb_pc = 0x00000000
+        [1072000 ns] Test is running, debug_wb_pc = 0xbfc2fb20
+----[1080905 ns] Number 8'd59 Functional Test Point PASS!!!
+        [1082000 ns] Test is running, debug_wb_pc = 0xbfc674c8
+        [1092000 ns] Test is running, debug_wb_pc = 0xbfc683b8
+        [1102000 ns] Test is running, debug_wb_pc = 0xbfc69318
+----[1106525 ns] Number 8'd60 Functional Test Point PASS!!!
+        [1112000 ns] Test is running, debug_wb_pc = 0xbfc28f30
+        [1122000 ns] Test is running, debug_wb_pc = 0xbfc29e74
+----[1125455 ns] Number 8'd61 Functional Test Point PASS!!!
+        [1132000 ns] Test is running, debug_wb_pc = 0x00000000
+        [1142000 ns] Test is running, debug_wb_pc = 0xbfc43d38
+----[1146755 ns] Number 8'd62 Functional Test Point PASS!!!
+        [1152000 ns] Test is running, debug_wb_pc = 0xbfc6217c
+        [1162000 ns] Test is running, debug_wb_pc = 0xbfc6306c
+        [1172000 ns] Test is running, debug_wb_pc = 0xbfc63f24
+----[1174985 ns] Number 8'd63 Functional Test Point PASS!!!
+        [1182000 ns] Test is running, debug_wb_pc = 0xbfc0dbc8
+        [1192000 ns] Test is running, debug_wb_pc = 0xbfc0eac8
+----[1201565 ns] Number 8'd64 Functional Test Point PASS!!!
+        [1202000 ns] Test is running, debug_wb_pc = 0xbfc423b0
+--------------------------------------------------------------
+[1202017 ns] Error!!!
+    reference: PC = 0xbfc00380, wb_rf_wnum = 0x1a, wb_rf_wdata = 0x00004000
+    mycpu    : PC = 0xbfc424a4, wb_rf_wnum = 0x09, wb_rf_wdata = 0x41000000
+--------------------------------------------------------------
+--------------------------------------------------------------
+[1202035 ns] Error(  0)!!! Occurred in number 8'd65 Functional Test Point!
+--------------------------------------------------------------
+$finish called at time : 1202057 ns : File "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/testbench/mycpu_tb.v" Line 152
+run: Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 3068.602 ; gain = 0.328
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292747491A
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 19868 KB (Peak: 19868 KB), Simulation CPU Usage: 12421 ms
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Jan  6 23:46:37 2022...

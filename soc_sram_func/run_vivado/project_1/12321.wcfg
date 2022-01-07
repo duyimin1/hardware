@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="778,434.025 ns"></ZoomStartTime>
-      <ZoomEndTime time="778,469.876 ns"></ZoomEndTime>
-      <Cursor1Time time="778,444.925 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="43.371 ns"></ZoomEndTime>
+      <Cursor1Time time="1,202,057.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="179"></NameColumnWidth>
-      <ValueColumnWidth column_width="135"></ValueColumnWidth>
+      <ValueColumnWidth column_width="131"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="17" />
    <wave_markers>
@@ -93,6 +93,10 @@
       <wvobject fp_name="/tb_top/soc_lite/u_cpu/cpu/alu/op" type="array">
          <obj_property name="ElementShortName">op[7:0]</obj_property>
          <obj_property name="ObjectShortName">op[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/soc_lite/u_cpu/cpu/alu/y_out" type="array">
+         <obj_property name="ElementShortName">y_out[31:0]</obj_property>
+         <obj_property name="ObjectShortName">y_out[31:0]</obj_property>
       </wvobject>
    </wvobject>
    <wvobject fp_name="group93" type="group">

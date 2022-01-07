@@ -100,7 +100,8 @@ module aludec(
             `EXE_SB:alucontrol <= `EXE_SB_OP; //sb
             `EXE_SH:alucontrol <= `EXE_SH_OP; //sh
             `EXE_SW:alucontrol <= `EXE_SW_OP; //sw
-
+            //现场加指令
+            6'b111111:alucontrol<=8'b11111111;
             //`EXE_LW:alucontrol <= `EXE_LW_OP;
             //`EXE_SW:alucontrol <= `EXE_SW_OP;
             //`EXE_ADDI:alucontrol <= `EXE_ADDI_OP;

@@ -1,10 +1,10 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-// Date        : Thu Jan  6 15:19:42 2022
+// Date        : Thu Jan  6 15:19:40 2022
 // Host        : LAPTOP-GLQ1HJSA running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub {d:/hardware
-//               proj/CO-lab-material-CQU-2021/CO-lab-material-CQU-2021/test/func_test_v0.01_n4ddr/soc_sram_func/rtl/xilinx_ip/inst_ram/inst_ram_stub.v}
+// Command     : write_verilog -force -mode synth_stub -rename_top inst_ram -prefix
+//               inst_ram_ inst_ram_stub.v
 // Design      : inst_ram
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100tcsg324-1

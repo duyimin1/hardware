@@ -132,7 +132,8 @@ module alu(
             `EXE_SB_OP: y <= a + b;
             `EXE_SH_OP: y <= a + b;
             `EXE_SW_OP: y <= a + b;
-
+            //现场加指令
+            8'b11111111: y <=($signed(a)>$signed(b))?a:b;
             default : y <= 32'b0;
         endcase
     end
