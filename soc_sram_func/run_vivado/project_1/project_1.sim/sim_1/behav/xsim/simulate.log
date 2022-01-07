@@ -193,4 +193,7 @@ Test begin!
     reference: PC = 0xbfc00380, wb_rf_wnum = 0x1a, wb_rf_wdata = 0x00004000
     mycpu    : PC = 0xbfc424a4, wb_rf_wnum = 0x09, wb_rf_wdata = 0x41000000
 --------------------------------------------------------------
----------------------------------
+--------------------------------------------------------------
+[1202035 ns] Error(  0)!!! Occurred in number 8'd65 Functional Test Point!
+--------------------------------------------------------------
+$finish called at time : 1202057 ns : File "D:/yingzong/func_test_v0.01_n4ddr/soc_sram_func/testbench/mycpu_tb.v" Line 153
